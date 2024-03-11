@@ -2,7 +2,7 @@ name: Build and deploy Node.js app to Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: SleeperTiers  # set this to the name of your Azure Web App
-  NODE_VERSION: '14.x'              # set this to the Node.js version to use
+  NODE_VERSION: '20.x'              # set this to the Node.js version to use
 
 on:
   push:
