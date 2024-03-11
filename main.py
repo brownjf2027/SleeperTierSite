@@ -1,6 +1,6 @@
 import uuid
 from _datetime import datetime
-import requests
+from requests import get
 import data
 from flask import Flask, render_template, redirect, url_for, send_file, make_response, session, jsonify
 from flask_wtf import FlaskForm
@@ -9,13 +9,13 @@ from wtforms.validators import DataRequired, ValidationError
 from flask_bootstrap import Bootstrap5
 from io import StringIO
 import json
-import pandas as pd
-import csv
-import collections
-import os
+from pandas import read_csv
+from csv import DictWriter
+from collections import OrderedDict
+from os import environ
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')  # Replace with your secret key
+app.config['SECRET_KEY'] = environ.get('FLASK_KEY')  # Replace with your secret key
 bootstrap = Bootstrap5(app)
 
 # # Load the values from .env
@@ -116,7 +116,7 @@ def download_csv():
     csv_buffer = StringIO()
 
     # Create a DictWriter object to write the CSV
-    csv_writer = csv.DictWriter(csv_buffer, fieldnames=fieldnames)
+    csv_writer = DictWriter(csv_buffer, fieldnames=fieldnames)
 
     # Write the header row
     csv_writer.writeheader()
@@ -173,7 +173,7 @@ def login():
 
         try:
             # Read CSV data into a DataFrame
-            csv_df = pd.read_csv(csv_file)
+            csv_df = read_csv(csv_file)
 
             # Convert DataFrame to JSON format
             csv_df.set_index('player_id', inplace=True)
@@ -202,7 +202,7 @@ def check_for_updates(draft_id):
     }
 
     draft_api_url = "https://api.sleeper.app/v1/draft/" + draft_id + "/picks"
-    response = requests.get(draft_api_url, params=parameters)
+    response = get(draft_api_url, params=parameters)
     response.raise_for_status()
     new_state = response.json()[-1]['pick_no']
     print("New state:", new_state)  # Add print statement to debug
@@ -256,37 +256,37 @@ def success(draft_id, draft_position):
         drafted_rb_ids = [player_info.get('player_id') for player_info in rbs_drafted]
         top_rbs = {k: v for k, v in top_players.items() if v['position'] == "RB" and k not in drafted_rb_ids}
         sorted_rbs = sorted(top_rbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_rbs = collections.OrderedDict(sorted_rbs)
+        top_rbs = OrderedDict(sorted_rbs)
 
         wrs_drafted = [player for player in picks if player['metadata']['position'] == "WR"]
         drafted_wr_ids = [player_info.get('player_id') for player_info in wrs_drafted]
         top_wrs = {k: v for k, v in top_players.items() if v['position'] == "WR" and k not in drafted_wr_ids}
         sorted_wrs = sorted(top_wrs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_wrs = collections.OrderedDict(sorted_wrs)
+        top_wrs = OrderedDict(sorted_wrs)
 
         qbs_drafted = [player for player in picks if player['metadata']['position'] == "QB"]
         drafted_qb_ids = [player_info.get('player_id') for player_info in qbs_drafted]
         top_qbs = {k: v for k, v in top_players.items() if v['position'] == "QB" and k not in drafted_qb_ids}
         sorted_qbs = sorted(top_qbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_qbs = collections.OrderedDict(sorted_qbs)
+        top_qbs = OrderedDict(sorted_qbs)
 
         tes_drafted = [player for player in picks if player['metadata']['position'] == "TE"]
         drafted_te_ids = [player_info.get('player_id') for player_info in tes_drafted]
         top_tes = {k: v for k, v in top_players.items() if v['position'] == "TE" and k not in drafted_te_ids}
         sorted_tes = sorted(top_tes.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_tes = collections.OrderedDict(sorted_tes)
+        top_tes = OrderedDict(sorted_tes)
 
         ks_drafted = [player for player in picks if player['metadata']['position'] == "K"]
         drafted_k_ids = [player_info.get('player_id') for player_info in ks_drafted]
         top_ks = {k: v for k, v in top_players.items() if v['position'] == "K" and k not in drafted_k_ids}
         sorted_ks = sorted(top_ks.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_ks = collections.OrderedDict(sorted_ks)
+        top_ks = OrderedDict(sorted_ks)
 
         defs_drafted = [player for player in picks if player['metadata']['position'] == "DEF"]
         drafted_def_ids = [player_info.get('player_id') for player_info in defs_drafted]
         top_defs = {k: v for k, v in top_players.items() if v['position'] == "DEF" and k not in drafted_def_ids}
         sorted_defs = sorted(top_defs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
-        top_defs = collections.OrderedDict(sorted_defs)
+        top_defs = OrderedDict(sorted_defs)
 
     except:
         return render_template("not_found.html")
