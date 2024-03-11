@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+  <section class="pt-5">
+    {% from 'bootstrap5/form.html' import render_form %}
+    <div class="container">
+      <h1 class="header mb-3"> Thoughts? Ideas? Let me know. </h1>
+        <form method="post" enctype="multipart/form-data">
+				{{ render_form(form) }}
+        </form>
+
+        <p class="m-2"> * required fields </p>
+    </div>
+  </section>
+{% endblock %}

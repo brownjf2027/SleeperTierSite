@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Clean Blog v6.0.9 (https://startbootstrap.com/theme/clean-blog)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
+*/
+/*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ colors:
+ #1e072d    black
+ #6930c3    purple
+ #6545c9
+ #5d73d6
+ #51b9e9
+ #45fbfc    cyan
+
+ */
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #0085A1;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #6930C3;
+  --bs-info-rgb: 81, 185, 233;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+.navbar {
+background: rgb(105,48,195);
+background: -moz-linear-gradient(126deg, rgba(105,48,195,1) 0%, rgba(101,69,201,1) 0%, rgba(30,7,45,1) 100%);
+background: -webkit-linear-gradient(126deg, rgba(105,48,195,1) 0%, rgba(101,69,201,1) 0%, rgba(30,7,45,1) 100%);
+background: linear-gradient(126deg, rgba(105,48,195,1) 0%, rgba(101,69,201,1) 0%, rgba(30,7,45,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6930c3",endColorstr="#1e072d",GradientType=1);
+}
+
+.btn-primary {
+background: #6930C3;
+border-color: #6930C3;
+}
+
+.btn-primary:active {
+    background-color: #C5BAFF;
+    border-color: #6930C3;
+}
+
+#submit {
+    padding: 8px 20px; /* Adjust padding values as needed */
+    font-size: 18px;
+}
+
+.btn-outline-secondary{
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover{
+    background-color: #212121;
+}
+
+body {
+background: #272728;
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, .1), inset 0 0.125em 0.5em rgba(0, 0, 0, .15);
+}
+
+main {
+padding-top: 5rem;
+}
+
+.gradient-background {
+  background: linear-gradient(300deg, #6930c3, #6545c9, #1e072d);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-info {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-info-rgb), var(--bs-text-opacity)) !important;
+}
+
+scrollable-content::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+border: 0px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Change these values as needed */
+width: 12rem;
+background-color: #212121;
+}
+
+.card-header {
+background-color: var(--bs-primary);
+}
+
+.card-body{
+padding-bottom: 0px;
+padding-top: 6px;
+background-color: #212121;
+}
+
+.card-body p {
+    padding-bottom: 0px; /* Adjust the padding value as needed */
+    margin-bottom: 10px;
+}
+
+.card-title {
+    padding-bottom: 0px; /* Adjust the padding value as needed */
+    margin-bottom: 0px;
+}
+
+.container-card{
+background-color: #212121;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Change these values as needed */
+width: 18rem;
+height: 26rem;
+overflow-y: auto;
+}
+
+.table-sm{
+color: #fff;
+}
+
+.list-group-item-action:active {
+  color: var(--bs-list-group-action-active-color);
+  background-color: var(--bs-list-group-action-active-bg);
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: var(--bs-list-group-active-color);
+  background-color: #6930C3;
+  border-color: var(--bs-list-group-active-border-color);
+}

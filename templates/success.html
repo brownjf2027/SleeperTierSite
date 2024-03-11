@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+<section id="title" class="section-background">
+    <div class="container pt-3">
+        <div class="row row-cols-1 row-cols-sm-2 text-center">
+            <div class="card rounded-3 p-0 m-2 ">
+                <div class="card-header py-1">
+                    <h5 class="card-title">Draft Details</h5>
+                </div>
+                <div class="card-body">
+                    <!--                <p class="mb-1"><strong>ID:</strong> {{ draft_id }}</p>-->
+                    <p class="mb-1"><strong>Status:</strong> <a class="text-info">{{ draft_status }}</a></p>
+                    <!--                <p class="mb-1"><strong>Last Pick:</strong> </p>-->
+                    <p class="mb-1 text-info">{{ draft_picks[0]['metadata']['first_name'] }} {{
+                        draft_picks[0]['metadata']['last_name'] }} ( #{{ draft_picks[0]['pick_no'] }} )</p>
+                    <p class="mb-1"><strong>Draft Position:</strong> {{ draft_position }} / {{
+                        draft_info['settings']['teams'] }}</p>
+                    <button class="btn btn-primary mb-2" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">See Picks
+                    </button>
+                </div>
+            </div>
+
+            <!--            <div class="card rounded-3 p-0 m-2">-->
+            <!--              <div class="card-header py-1">-->
+            <!--                <h5 class="card-title">Total Drafted</h5>-->
+            <!--              </div>-->
+            <!--              <div class="card-body pt-2">-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col">-->
+            <!--                            <h6 class="fw-bold text-info">QB</h6>-->
+            <!--                            <p>XX</p>-->
+            <!--                        </div>-->
+            <!--                        <div class="col">-->
+            <!--                            <h6 class="fw-bold text-info">RB</h6>-->
+            <!--                            <p>{{ rbs_drafted_count }}</p>-->
+            <!--                        </div>-->
+            <!--                        <div class="col">-->
+            <!--                            <h6 class="fw-bold text-info">WR</h6>-->
+            <!--                            <p>XX</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="row">-->
+            <!--                        <div class="col mb-0">-->
+            <!--                            <h6 class="fw-bold text-info">TE</h6>-->
+            <!--                            <p>XX</p>-->
+            <!--                        </div>-->
+            <!--                        <div class="col mb-0">-->
+            <!--                            <h6 class="fw-bold text-info">DEF</h6>-->
+            <!--                            <p>XX</p>-->
+            <!--                        </div>-->
+            <!--                        <div class="col mb-0">-->
+            <!--                            <h6 class="fw-bold text-info">K</h6>-->
+            <!--                            <p>XX</p>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="board_header mt-3">Draft Board</h3>
+        <div class="row">
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">RB </h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_rbs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">WR</h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_wrs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">TE</h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_tes.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">QB</h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_qbs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">K</h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_ks.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <h3 class="text-info">DEF</h3>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_defs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--    off canvas-->
+<div class="offcanvas offcanvas-start offcanvas-size-sm" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="width: 300px">
+    <div class="offcanvas-header" data-bs-theme="dark" style="width: 280px">
+        <h2>Draft Picks</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="max-width: 280px; overflow-x: hidden;">
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0" style="width: 250px;">
+            {% for pick in draft_picks %}
+            <div class="list-group list-group-flush border-bottom scrollarea" style="max-width: 250px;">
+                {% if loop.first %}
+                <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
+                    {% else %}
+                    <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                        {% endif %}
+                        <div class="d-flex w-100 align-items-center justify-content-between" style="width: 100%;">
+                            <strong class="mb-1" style="max-width: 70%;">{{ pick['metadata']['first_name'] }} {{
+                                pick['metadata']['last_name'] }}</strong>
+                            <small style="max-width: 30%;">{{ pick['metadata']['position'] }}</small>
+                        </div>
+                        <div class="col-10 mb-1 small" style="max-width: 100%;">Pick #{{ pick['pick_no'] }}.</div>
+                    </a>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Function to reload the page when a change is detected
+    function checkForUpdates() {
+        // Make an AJAX request to the server
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/check_for_updates/{{ draft_id }}', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log('Response received:', xhr.responseText); // Add console log to debug
+                    // Parse JSON response
+                    var response = JSON.parse(xhr.responseText);
+                    // Check if a change is detected
+                    if (response.update_available) {
+                        // If a change is detected, refresh the page
+                        console.log('Change detected, reloading page');
+                        window.location.reload(true);
+                    } else {
+                        console.log('No change detected');
+                    }
+                } else {
+                    console.error('Error:', xhr.status);
+                }
+            }
+        };
+        xhr.send();
+    }
+
+    // Call checkForUpdates initially
+    checkForUpdates();
+
+    // Call checkForUpdates every 30 seconds
+    setInterval(checkForUpdates, 3000);
+
+
+    function redirectToLogin() {
+    // Logic to redirect to the login page
+    window.location.href = '/login';
+}
+
+    // Set timeout for redirecting to login page after an hour (3600000 milliseconds)
+    setTimeout(redirectToLogin, 3600000);
+
+    // Function to handle offcanvas show event
+    var offcanvasElement = document.getElementById('offcanvasScrolling');
+    offcanvasElement.addEventListener('show.bs.offcanvas', function () {
+        document.querySelector('.main-content').classList.add('offcanvas-active');
+    });
+
+    // Function to handle offcanvas hide event
+    offcanvasElement.addEventListener('hide.bs.offcanvas', function () {
+        document.querySelector('.main-content').classList.remove('offcanvas-active');
+    });
+</script>
+{% endblock %}

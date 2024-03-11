@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+<section>
+    <div class="container mb-3 mt-3 py-3">
+        <h1 class="text-info mb-3">Sleeper Fantasy League</h1>
+        <h3>Enter draft info:</h3>
+        <!-- This is where our form will go. -->
+        <form method="post" enctype="multipart/form-data">
+            {{ render_form(form) }}
+        </form>
+    </div>
+    <div class="container">
+        <h6>If you still need to download and fill out the CSV file, click below. You do not need to fill out a Tier
+            for every player. Just input as many as you'd like using numerical tier assignments. Anyone not assigned
+            a tier will default '99' and sort by projected half ppr.</h6>
+        <a class="btn btn-lg bd-btn-lg btn-outline-secondary mt-2 mb-4" onclick="downloadCSV()">
+            Download CSV Template
+        </a>
+    </div>
+</section>
+<div class="b-example-divider"></div>
+<section class="pb-5 text-center">
+    <div class="container mb-3 mt-3 py-3">
+        <h1 class="text-info mb-3">Manual Mode</h1>
+        <h3 class="mb-3">Manually mark players as drafted when they occur.</h3>
+        <a class="btn btn-info btn-lg" href="/manual">Manual Draft Tracker</a>
+    </div>
+</section>
+{% endblock %}
