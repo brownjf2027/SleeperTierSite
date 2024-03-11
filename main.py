@@ -1,7 +1,6 @@
+import uuid
 from _datetime import datetime
-
 import requests
-
 import data
 from flask import Flask, render_template, redirect, url_for, send_file, make_response, session, jsonify
 from flask_wtf import FlaskForm
@@ -13,10 +12,16 @@ import json
 import pandas as pd
 import csv
 import collections
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'testestestes'  # Replace with your secret key
 bootstrap = Bootstrap5(app)
+
+# # Load the values from .env
+# key = os.environ['KEY']
+# endpoint = os.environ['ENDPOINT']
+# location = os.environ['LOCATION']
 
 
 class CSVFileValidator:
