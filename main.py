@@ -15,7 +15,7 @@ import collections
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'testestestes'  # Replace with your secret key
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')  # Replace with your secret key
 bootstrap = Bootstrap5(app)
 
 # # Load the values from .env
