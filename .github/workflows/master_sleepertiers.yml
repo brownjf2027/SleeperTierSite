@@ -75,4 +75,6 @@ jobs:
         with:
           app-name: 'SleeperTiers'
           slot-name: 'Production'
+          startup-command: 'python main.py'
+
           
