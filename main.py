@@ -308,4 +308,4 @@ def success(draft_id, draft_position):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
