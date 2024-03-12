@@ -1,22 +1,22 @@
-import uuid
 from _datetime import datetime
-from requests import get
-import data
-from flask import Flask, render_template, redirect, url_for, send_file, make_response, session, jsonify, request
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, FileField, TextAreaField, EmailField
-from wtforms.validators import DataRequired, ValidationError
-from flask_bootstrap import Bootstrap5
-from io import StringIO
-import json
-from pandas import read_csv
-from csv import DictWriter
 from collections import OrderedDict
+from csv import DictWriter
+from io import StringIO
 from os import environ
+
+import sqlalchemy.exc
+from flask import Flask, render_template, redirect, url_for, make_response, jsonify
+from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import FlaskForm
+from pandas import read_csv
+from requests import get
 from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
+from wtforms import StringField, SubmitField, FileField, TextAreaField, EmailField
+from wtforms.validators import DataRequired, ValidationError
+
+import data
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = environ.get('FLASK_KEY')  # Replace with your secret key
@@ -33,11 +33,18 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///feedback.db"
-db = SQLAlchemy(model_class=Base)
-# Initialise the app with the extension
-db.init_app(app)
+# Replace {your_password_here} with your actual password
+connection_string = (
+    f"mssql+pymssql://sleeperadmin:{environ.get('FEEDBACK_DB_PASS')}@sleepertiers.database.windows.net:1433/feedback"
+    "?timeout=30"
+)
+print(connection_string)
+app.config['SQLALCHEMY_DATABASE_URI'] = connection_string
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
+# db = SQLAlchemy(model_class=Base)
+# db.init_app(app)
 
 class Feedback(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -86,10 +93,13 @@ class Feedback(db.Model):
 #
 #     ranking_sheet = db.relationship('RankingSheet', backref=db.backref('player_rankings', lazy=True))
 #     player = db.relationship('NFLPlayer', backref=db.backref('ranking_sheets', lazy=True))
-
-
-with app.app_context():
-    db.create_all()
+db_up = True
+try:
+    with app.app_context():
+        db.create_all()
+except sqlalchemy.exc.OperationalError:
+    print("not available")
+    db_up = False
 
 
 class CSVFileValidator:
