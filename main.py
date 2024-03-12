@@ -83,7 +83,7 @@ def thanks():
 
 @app.route("/about", methods=["GET"])
 def about():
-    return render_template('tbd.html')
+    return render_template('about.html')
 
 
 @app.route("/manual", methods=["GET"])
@@ -164,10 +164,12 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         draft_id = form.draft_id.data
-        # TODO Allow for pasting full hyperlink from sleeper and use split to grab just the last portion
         if "nfl" in draft_id:
             split_string = draft_id.split("/")
             draft_id = split_string[-1]
+            if "?" in draft_id:
+                split_string = draft_id.split("?")
+                draft_id = split_string[0]
         draft_position = form.draft_position.data
         csv_file = form.csv_doc.data
 
@@ -234,13 +236,50 @@ def success(draft_id, draft_position):
     top_tes = {}
     top_ks = {}
     top_defs = {}
+    my_rbs = {}
+    my_wrs = {}
+    my_qbs = {}
+    my_tes = {}
+    my_ks = {}
+    my_defs = {}
+    qb1s = 0
+    qb2s = 0
+    qb3s = 0
+    rb1s = 0
+    rb2s = 0
+    rb3s = 0
+    wr1s = 0
+    wr2s = 0
+    wr3s = 0
+    te1s = 0
+    te2s = 0
+    te3s = 0
+    def1s = 0
+    def2s = 0
+    def3s = 0
+    k1s = 0
+    k2s = 0
+    k3s = 0
 
+    draft_order = {}
+    my_team = ""
     # Retrieve the CSV content from the session
     csv_contents = data.get_csv()
 
     try:
         draft_info = data.get_draft(draft_id)
+        draft_order = draft_info.get('draft_order')
+        if draft_order is not None:
+            for key, value in draft_order.items():
+                if value == int(draft_position):
+                    my_team = str(key)
+
         draft_status = draft_info['status'].title()
+        if draft_status == "Complete":
+            redirect_url = url_for('draft_complete', draft_id=draft_id, draft_position=draft_position)
+            print("Redirect URL:", redirect_url)
+
+            return redirect(url_for('draft_complete', draft_id=draft_id, draft_position=draft_position))
         picks = data.get_draft_picks(draft_id)
         picks = list(reversed(picks))
         top_players = data.top_players()
@@ -250,43 +289,106 @@ def success(draft_id, draft_position):
                 # Convert tier to integer
                 values['tier'] = int(tier)
             else:
-                values['tier'] = "99"
+                values['tier'] = 99
 
         rbs_drafted = [player for player in picks if player['metadata']['position'] == "RB"]
         drafted_rb_ids = [player_info.get('player_id') for player_info in rbs_drafted]
+        my_rbs = [player for player in rbs_drafted if player['picked_by'] == my_team]
+        my_rbs = list(reversed(my_rbs))
+
+        for player in my_rbs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        print(list(my_rbs))
         top_rbs = {k: v for k, v in top_players.items() if v['position'] == "RB" and k not in drafted_rb_ids}
         sorted_rbs = sorted(top_rbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_rbs = OrderedDict(sorted_rbs)
 
+        rb1s = len([player for player in top_rbs.values() if player.get('tier') == 1])
+        rb2s = len([player for player in top_rbs.values() if player.get('tier') == 2])
+        rb3s = len([player for player in top_rbs.values() if player.get('tier') == 3])
+
         wrs_drafted = [player for player in picks if player['metadata']['position'] == "WR"]
+        my_wrs = [player for player in wrs_drafted if player['picked_by'] == my_team]
+        my_wrs = list(reversed(my_wrs))
+
+        for player in my_wrs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
         drafted_wr_ids = [player_info.get('player_id') for player_info in wrs_drafted]
         top_wrs = {k: v for k, v in top_players.items() if v['position'] == "WR" and k not in drafted_wr_ids}
         sorted_wrs = sorted(top_wrs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_wrs = OrderedDict(sorted_wrs)
 
+        wr1s = len([player for player in top_wrs.values() if player.get('tier') == 1])
+        wr2s = len([player for player in top_wrs.values() if player.get('tier') == 2])
+        wr3s = len([player for player in top_wrs.values() if player.get('tier') == 3])
+
         qbs_drafted = [player for player in picks if player['metadata']['position'] == "QB"]
+        my_qbs = [player for player in qbs_drafted if player['picked_by'] == my_team]
+        my_qbs = list(reversed(my_qbs))
+        for player in my_qbs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
         drafted_qb_ids = [player_info.get('player_id') for player_info in qbs_drafted]
         top_qbs = {k: v for k, v in top_players.items() if v['position'] == "QB" and k not in drafted_qb_ids}
         sorted_qbs = sorted(top_qbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_qbs = OrderedDict(sorted_qbs)
 
+        qb1s = len([player for player in top_qbs.values() if player.get('tier') == 1])
+        qb2s = len([player for player in top_qbs.values() if player.get('tier') == 2])
+        qb3s = len([player for player in top_qbs.values() if player.get('tier') == 3])
+
         tes_drafted = [player for player in picks if player['metadata']['position'] == "TE"]
+        my_tes = [player for player in tes_drafted if player['picked_by'] == my_team]
+        my_tes = list(reversed(my_tes))
+        for player in my_tes:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
         drafted_te_ids = [player_info.get('player_id') for player_info in tes_drafted]
         top_tes = {k: v for k, v in top_players.items() if v['position'] == "TE" and k not in drafted_te_ids}
         sorted_tes = sorted(top_tes.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_tes = OrderedDict(sorted_tes)
 
+        te1s = len([player for player in top_tes.values() if player.get('tier') == 1])
+        te2s = len([player for player in top_tes.values() if player.get('tier') == 2])
+        te3s = len([player for player in top_tes.values() if player.get('tier') == 3])
+
         ks_drafted = [player for player in picks if player['metadata']['position'] == "K"]
+        my_ks = [player for player in ks_drafted if player['picked_by'] == my_team]
+        my_ks = list(reversed(my_ks))
+        for player in my_ks:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
         drafted_k_ids = [player_info.get('player_id') for player_info in ks_drafted]
         top_ks = {k: v for k, v in top_players.items() if v['position'] == "K" and k not in drafted_k_ids}
         sorted_ks = sorted(top_ks.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_ks = OrderedDict(sorted_ks)
 
+        k1s = len([player for player in top_ks.values() if player.get('tier') == 1])
+        k2s = len([player for player in top_ks.values() if player.get('tier') == 2])
+        k3s = len([player for player in top_ks.values() if player.get('tier') == 3])
+
         defs_drafted = [player for player in picks if player['metadata']['position'] == "DEF"]
+        my_defs = [player for player in defs_drafted if player['picked_by'] == my_team]
+        my_defs = list(reversed(my_defs))
+        for player in my_defs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
         drafted_def_ids = [player_info.get('player_id') for player_info in defs_drafted]
         top_defs = {k: v for k, v in top_players.items() if v['position'] == "DEF" and k not in drafted_def_ids}
         sorted_defs = sorted(top_defs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
         top_defs = OrderedDict(sorted_defs)
+
+        def1s = len([player for player in top_defs.values() if player.get('tier') == 1])
+        def2s = len([player for player in top_defs.values() if player.get('tier') == 2])
+        def3s = len([player for player in top_defs.values() if player.get('tier') == 3])
 
     except:
         return render_template("not_found.html")
@@ -303,9 +405,240 @@ def success(draft_id, draft_position):
                            top_tes=top_tes,
                            top_qbs=top_qbs,
                            top_ks=top_ks,
-                           top_defs=top_defs
+                           top_defs=top_defs,
+                           my_qbs=my_qbs,
+                           my_rbs=my_rbs,
+                           my_wrs=my_wrs,
+                           my_tes=my_tes,
+                           my_ks=my_ks,
+                           my_defs=my_defs,
+                           rb1s=rb1s,
+                           rb2s=rb2s,
+                           rb3s=rb3s,
+                           wr1s=wr1s,
+                           wr2s=wr2s,
+                           wr3s=wr3s,
+                           te1s=te1s,
+                           te2s=te2s,
+                           te3s=te3s,
+                           qb1s=qb1s,
+                           qb2s=qb2s,
+                           qb3s=qb3s,
+                           def1s=def1s,
+                           def2s=def2s,
+                           def3s=def3s,
+                           k1s=k1s,
+                           k2s=k2s,
+                           k3s=k3s,
+                           my_team=my_team,
+                           )
+
+
+@app.route("/draft/complete/<draft_id>/<draft_position>", methods=['GET'])
+def draft_complete(draft_id, draft_position):
+    # additional processing
+    draft_status = "Not Found. Verify draft ID and try again."
+    picks = []
+    draft_info = []
+    rbs_drafted = []
+    top_rbs = {}
+    top_wrs = {}
+    top_qbs = {}
+    top_tes = {}
+    top_ks = {}
+    top_defs = {}
+    my_rbs = {}
+    my_wrs = {}
+    my_qbs = {}
+    my_tes = {}
+    my_ks = {}
+    my_defs = {}
+    qb1s = 0
+    qb2s = 0
+    qb3s = 0
+    rb1s = 0
+    rb2s = 0
+    rb3s = 0
+    wr1s = 0
+    wr2s = 0
+    wr3s = 0
+    te1s = 0
+    te2s = 0
+    te3s = 0
+    def1s = 0
+    def2s = 0
+    def3s = 0
+    k1s = 0
+    k2s = 0
+    k3s = 0
+
+    draft_order = {}
+    my_team = ""
+    # Retrieve the CSV content from the session
+    csv_contents = data.get_csv()
+
+    try:
+        draft_info = data.get_draft(draft_id)
+        draft_order = draft_info['draft_order']
+        for key, value in draft_order.items():
+            if value == int(draft_position):
+                my_team = str(key)
+
+        draft_status = draft_info['status'].title()
+        picks = data.get_draft_picks(draft_id)
+        picks = list(reversed(picks))
+        top_players = data.top_players()
+        for player, values in top_players.items():  # Assuming top_players is a dictionary
+            if player in csv_contents and 'tier' in csv_contents[player] and csv_contents[player]['tier'] is not None:
+                tier = csv_contents[player]['tier']
+                # Convert tier to integer
+                values['tier'] = int(tier)
+            else:
+                values['tier'] = 99
+
+        rbs_drafted = [player for player in picks if player['metadata']['position'] == "RB"]
+        drafted_rb_ids = [player_info.get('player_id') for player_info in rbs_drafted]
+        my_rbs = [player for player in rbs_drafted if player['picked_by'] == my_team]
+        my_rbs = list(reversed(my_rbs))
+
+        for player in my_rbs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        print(list(my_rbs))
+        top_rbs = {k: v for k, v in top_players.items() if v['position'] == "RB" and k not in drafted_rb_ids}
+        sorted_rbs = sorted(top_rbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_rbs = OrderedDict(sorted_rbs)
+
+        rb1s = len([player for player in top_rbs.values() if player.get('tier') == 1])
+        rb2s = len([player for player in top_rbs.values() if player.get('tier') == 2])
+        rb3s = len([player for player in top_rbs.values() if player.get('tier') == 3])
+
+        wrs_drafted = [player for player in picks if player['metadata']['position'] == "WR"]
+        my_wrs = [player for player in wrs_drafted if player['picked_by'] == my_team]
+        my_wrs = list(reversed(my_wrs))
+
+        for player in my_wrs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        drafted_wr_ids = [player_info.get('player_id') for player_info in wrs_drafted]
+        top_wrs = {k: v for k, v in top_players.items() if v['position'] == "WR" and k not in drafted_wr_ids}
+        sorted_wrs = sorted(top_wrs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_wrs = OrderedDict(sorted_wrs)
+
+        wr1s = len([player for player in top_wrs.values() if player.get('tier') == 1])
+        wr2s = len([player for player in top_wrs.values() if player.get('tier') == 2])
+        wr3s = len([player for player in top_wrs.values() if player.get('tier') == 3])
+
+        qbs_drafted = [player for player in picks if player['metadata']['position'] == "QB"]
+        my_qbs = [player for player in qbs_drafted if player['picked_by'] == my_team]
+        my_qbs = list(reversed(my_qbs))
+        for player in my_qbs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        drafted_qb_ids = [player_info.get('player_id') for player_info in qbs_drafted]
+        top_qbs = {k: v for k, v in top_players.items() if v['position'] == "QB" and k not in drafted_qb_ids}
+        sorted_qbs = sorted(top_qbs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_qbs = OrderedDict(sorted_qbs)
+
+        qb1s = len([player for player in top_qbs.values() if player.get('tier') == 1])
+        qb2s = len([player for player in top_qbs.values() if player.get('tier') == 2])
+        qb3s = len([player for player in top_qbs.values() if player.get('tier') == 3])
+
+        tes_drafted = [player for player in picks if player['metadata']['position'] == "TE"]
+        my_tes = [player for player in tes_drafted if player['picked_by'] == my_team]
+        my_tes = list(reversed(my_tes))
+        for player in my_tes:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        drafted_te_ids = [player_info.get('player_id') for player_info in tes_drafted]
+        top_tes = {k: v for k, v in top_players.items() if v['position'] == "TE" and k not in drafted_te_ids}
+        sorted_tes = sorted(top_tes.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_tes = OrderedDict(sorted_tes)
+
+        te1s = len([player for player in top_tes.values() if player.get('tier') == 1])
+        te2s = len([player for player in top_tes.values() if player.get('tier') == 2])
+        te3s = len([player for player in top_tes.values() if player.get('tier') == 3])
+
+        ks_drafted = [player for player in picks if player['metadata']['position'] == "K"]
+        my_ks = [player for player in ks_drafted if player['picked_by'] == my_team]
+        my_ks = list(reversed(my_ks))
+        for player in my_ks:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        drafted_k_ids = [player_info.get('player_id') for player_info in ks_drafted]
+        top_ks = {k: v for k, v in top_players.items() if v['position'] == "K" and k not in drafted_k_ids}
+        sorted_ks = sorted(top_ks.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_ks = OrderedDict(sorted_ks)
+
+        k1s = len([player for player in top_ks.values() if player.get('tier') == 1])
+        k2s = len([player for player in top_ks.values() if player.get('tier') == 2])
+        k3s = len([player for player in top_ks.values() if player.get('tier') == 3])
+
+        defs_drafted = [player for player in picks if player['metadata']['position'] == "DEF"]
+        my_defs = [player for player in defs_drafted if player['picked_by'] == my_team]
+        my_defs = list(reversed(my_defs))
+        for player in my_defs:
+            id = player['player_id']
+            player['tier'] = top_players[id].get('tier')
+
+        drafted_def_ids = [player_info.get('player_id') for player_info in defs_drafted]
+        top_defs = {k: v for k, v in top_players.items() if v['position'] == "DEF" and k not in drafted_def_ids}
+        sorted_defs = sorted(top_defs.items(), key=lambda x: int(x[1].get('tier', float('inf'))))
+        top_defs = OrderedDict(sorted_defs)
+
+        def1s = len([player for player in top_defs.values() if player.get('tier') == 1])
+        def2s = len([player for player in top_defs.values() if player.get('tier') == 2])
+        def3s = len([player for player in top_defs.values() if player.get('tier') == 3])
+
+    except:
+        return render_template("not_found.html")
+
+    return render_template("draft_complete.html",
+                           draft_id=draft_id,
+                           draft_position=draft_position,
+                           draft_status=draft_status,
+                           draft_info=draft_info,
+                           draft_picks=picks,
+                           rbs_drafted_count=len(rbs_drafted),
+                           top_rbs=top_rbs,
+                           top_wrs=top_wrs,
+                           top_tes=top_tes,
+                           top_qbs=top_qbs,
+                           top_ks=top_ks,
+                           top_defs=top_defs,
+                           my_qbs=my_qbs,
+                           my_rbs=my_rbs,
+                           my_wrs=my_wrs,
+                           my_tes=my_tes,
+                           my_ks=my_ks,
+                           my_defs=my_defs,
+                           rb1s=rb1s,
+                           rb2s=rb2s,
+                           rb3s=rb3s,
+                           wr1s=wr1s,
+                           wr2s=wr2s,
+                           wr3s=wr3s,
+                           te1s=te1s,
+                           te2s=te2s,
+                           te3s=te3s,
+                           qb1s=qb1s,
+                           qb2s=qb2s,
+                           qb3s=qb3s,
+                           def1s=def1s,
+                           def2s=def2s,
+                           def3s=def3s,
+                           k1s=k1s,
+                           k2s=k2s,
+                           k3s=k3s,
+                           my_team=my_team,
                            )
 
 
 if __name__ == '__main__':
+    # app.run(debug=True)
     app.run()

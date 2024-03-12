@@ -1,7 +1,7 @@
 {
     "type": "snake",
-    "status": "drafting",
-    "start_time": 1705522985248,
+    "status": "complete",
+    "start_time": 1710222486202,
     "sport": "nfl",
     "slot_to_roster_id": {
         "9": 9,
@@ -25,16 +25,9 @@
         "slots_flex": 2,
         "slots_def": 1,
         "rounds": 15,
-        "reversal_round": 0,
-        "player_type": 0,
-        "pick_timer": 0,
-        "nomination_timer": 60,
-        "cpu_autopick": 0,
-        "autostart": 0,
-        "autopause_start_time": 240,
-        "autopause_end_time": 960,
-        "autopause_enabled": 0,
-        "alpha_sort": 0
+        "pick_timer": 120,
+        "cpu_autopick": 1,
+        "autostart": 0
     },
     "season_type": "regular",
     "season": "2024",
@@ -44,15 +37,15 @@
         "description": ""
     },
     "league_id": null,
-    "last_picked": 1710168253458,
-    "last_message_time": 1709883722320,
-    "last_message_id": "1071733645846675456",
+    "last_picked": 1710225225693,
+    "last_message_time": 1710225225706,
+    "last_message_id": "1073166014868619264",
     "draft_order": {
-        "738962794141077504": 4
+        "738962794141077504": 5
     },
-    "draft_id": "1052865939722690560",
+    "draft_id": "1073154350823895040",
     "creators": [
         "738962794141077504"
     ],
-    "created": 1705385310632
+    "created": 1710222444780
 }

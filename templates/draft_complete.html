@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Sleeper Tiers{% endblock %}
 {% block content %}
+<div class="mt-5">
+    <div class="p-5 text-center bg-body-tertiary">
+        <div class="container py-4">
+            <h1 class="text-body-emphasis">Draft Complete! How did you like it?</h1>
+            <p class="col-lg-8 mx-auto lead">
+                If you'd like to see this tool developed further feel free to reach out via the Contact page and/or
+                buying
+                me a coffee below. Any donations will help cover hosting costs and time for further development. </p>
+            <div class ="container pt-3 pb-0">
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                        data-name="bmc-button" data-slug="jfbrown" data-color="#BD5FFF" data-emoji=""
+                        data-font="Poppins"
+                        data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff"
+                        data-coffee-color="#FFDD00"></script>
+            </div>
+        </div>
+    </div>
+</div>
 <section id="title" class="section-background">
     <div class="container pt-3">
         <div class="row row-cols-1 row-cols-sm-2 text-center">
@@ -160,15 +178,16 @@
                             </h6>
                         </div>
                     </div>
-                    {% endif %}
-<!--                    <button class="btn btn-primary mb-2 mt-2" type="button" data-bs-toggle="offcanvas"-->
-<!--                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">See Picks-->
-<!--                    </button>-->
+
+                    <!--                    <button class="btn btn-primary mb-2 mt-2" type="button" data-bs-toggle="offcanvas"-->
+                    <!--                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">See Picks-->
+                    <!--                    </button>-->
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
-    <div class="container">
+    <div class="container mx-5">
         <h3 class="board_header mt-3">Draft Board</h3>
         <div class="row">
             <div class="container-card rounded-3 p-2 m-2">
@@ -179,46 +198,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if qb1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if qb1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ qb1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ qb1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ qb1s }}</h5>
+                            <h5 class="text pt-1">{{ qb1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if qb2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if qb2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ qb2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ qb2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ qb2s }}</h5>
+                            <h5 class="text pt-1">{{ qb2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if qb3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if qb3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ qb3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ qb3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ qb3s }}</h5>
+                            <h5 class="text pt-1">{{ qb3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -252,46 +271,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if rb1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if rb1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ rb1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ rb1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ rb1s }}</h5>
+                            <h5 class="text pt-1">{{ rb1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if rb2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if rb2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ rb2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ rb2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ rb2s }}</h5>
+                            <h5 class="text pt-1">{{ rb2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if rb3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if rb3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ rb3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ rb3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ rb3s }}</h5>
+                            <h5 class="text pt-1">{{ rb3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -326,46 +345,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if wr1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if wr1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ wr1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ wr1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ wr1s }}</h5>
+                            <h5 class="text pt-1">{{ wr1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if wr2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if wr2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ wr2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ wr2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ wr2s }}</h5>
+                            <h5 class="text pt-1">{{ wr2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if wr3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if wr3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ wr3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ wr3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ wr3s }}</h5>
+                            <h5 class="text pt-1">{{ wr3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -373,7 +392,7 @@
                 <div class="table-primary">
                     <table class="table-sm">
                         <thead>
-<!--                        <h3 class="text-info">WR</h3>-->
+                        <!--                        <h3 class="text-info">WR</h3>-->
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
@@ -400,46 +419,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if te1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if te1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ te1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ te1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ te1s }}</h5>
+                            <h5 class="text pt-1">{{ te1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if te2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if te2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ te2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ te2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ te2s }}</h5>
+                            <h5 class="text pt-1">{{ te2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if te3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if te3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ te3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ te3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ te3s }}</h5>
+                            <h5 class="text pt-1">{{ te3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -447,7 +466,7 @@
                 <div class="table-primary">
                     <table class="table-sm">
                         <thead>
-<!--                        <h3 class="text-info">TE</h3>-->
+                        <!--                        <h3 class="text-info">TE</h3>-->
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
@@ -474,46 +493,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if def1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if def1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ def1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ def1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ def1s }}</h5>
+                            <h5 class="text pt-1">{{ def1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if def2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if def2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ def2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ def2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ def2s }}</h5>
+                            <h5 class="text pt-1">{{ def2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if def3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if def3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ def3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ def3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ def3s }}</h5>
+                            <h5 class="text pt-1">{{ def3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -521,7 +540,7 @@
                 <div class="table-primary">
                     <table class="table-sm">
                         <thead>
-<!--                        <h3 class="text-info">DEF</h3>-->
+                        <!--                        <h3 class="text-info">DEF</h3>-->
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
@@ -548,46 +567,46 @@
                         </div>
                         <div class="col-1 pt-1">
                             {% if k1s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if k1s == 0 %}
-                                <h5 class="text pt-1" style="opacity: 10%">{{ k1s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%">{{ k1s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ k1s }}</h5>
+                            <h5 class="text pt-1">{{ k1s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if k2s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if k2s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ k2s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ k2s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ k2s }}</h5>
+                            <h5 class="text pt-1">{{ k2s }}</h5>
                             {% endif %}
 
                         </div>
                         <div class="col-1 pt-1">
                             {% if k3s == 0 %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
                             {% else %}
-                                <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
                             {% endif %}
                         </div>
                         <div class="col-1">
                             {% if k3s == 0 %}
-                                <h5 class="text pt-1"  style="opacity: 10%;">{{ k3s }}</h5>
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ k3s }}</h5>
                             {% else %}
-                                <h5 class="text pt-1">{{ k3s }}</h5>
+                            <h5 class="text pt-1">{{ k3s }}</h5>
                             {% endif %}
                         </div>
                     </div>
@@ -648,48 +667,6 @@
 
 
 <script>
-    // Function to reload the page when a change is detected
-    function checkForUpdates() {
-        // Make an AJAX request to the server
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/check_for_updates/{{ draft_id }}', true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    console.log('Response received:', xhr.responseText); // Add console log to debug
-                    // Parse JSON response
-                    var response = JSON.parse(xhr.responseText);
-                    // Check if a change is detected
-                    if (response.update_available) {
-                        // If a change is detected, refresh the page
-                        console.log('Change detected, reloading page');
-                        window.location.reload(true);
-                    } else {
-                        console.log('No change detected');
-                    }
-                } else {
-                    console.error('Error:', xhr.status);
-                }
-            }
-        };
-        xhr.send();
-    }
-
-    // Call checkForUpdates initially
-    checkForUpdates();
-
-    // Call checkForUpdates every 30 seconds
-    setInterval(checkForUpdates, 3000);
-
-
-    function redirectToLogin() {
-    // Logic to redirect to the login page
-    window.location.href = '/login';
-}
-
-    // Set timeout for redirecting to login page after an hour (3600000 milliseconds)
-    setTimeout(redirectToLogin, 3600000);
-
     // Function to handle offcanvas show event
     var offcanvasElement = document.getElementById('offcanvasScrolling');
     offcanvasElement.addEventListener('show.bs.offcanvas', function () {
@@ -701,8 +678,5 @@
         document.querySelector('.main-content').classList.remove('offcanvas-active');
     });
 </script>
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-        data-id="jfbrown" data-description="Support me on Buy me a coffee!"
-        data-color="#51b9e9" data-position="Right"
-        data-x_margin="18" data-y_margin="18"></script>
+
 {% endblock %}
