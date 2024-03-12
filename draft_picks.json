@@ -20,7 +20,7 @@
         },
         "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
@@ -43,7 +43,7 @@
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
@@ -66,13 +66,13 @@
         },
         "is_keeper": null,
         "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
         "roster_id": null,
         "player_id": "9509",
-        "picked_by": "",
+        "picked_by": "738962794141077504",
         "pick_no": 4,
         "metadata": {
             "years_exp": "1",
@@ -89,13 +89,13 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
         "roster_id": null,
         "player_id": "3321",
-        "picked_by": "738962794141077504",
+        "picked_by": "",
         "pick_no": 5,
         "metadata": {
             "years_exp": "8",
@@ -112,60 +112,14 @@
         },
         "is_keeper": null,
         "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 1,
-        "roster_id": null,
-        "player_id": "1466",
-        "picked_by": "",
-        "pick_no": 6,
-        "metadata": {
-            "years_exp": "11",
-            "team": "KC",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "1466",
-            "number": "87",
-            "news_updated": "1707767761505",
-            "last_name": "Kelce",
-            "injury_status": "",
-            "first_name": "Travis"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 1,
-        "roster_id": null,
-        "player_id": "7564",
-        "picked_by": "",
-        "pick_no": 7,
-        "metadata": {
-            "years_exp": "3",
-            "team": "CIN",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "7564",
-            "number": "1",
-            "news_updated": "1704678327690",
-            "last_name": "Chase",
-            "injury_status": "",
-            "first_name": "Ja'Marr"
-        },
-        "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
         "roster_id": null,
         "player_id": "4988",
         "picked_by": "",
-        "pick_no": 8,
+        "pick_no": 6,
         "metadata": {
             "years_exp": "6",
             "team": "CLE",
@@ -180,8 +134,54 @@
             "first_name": "Nick"
         },
         "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 1,
+        "roster_id": null,
+        "player_id": "1466",
+        "picked_by": "",
+        "pick_no": 7,
+        "metadata": {
+            "years_exp": "11",
+            "team": "KC",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "1466",
+            "number": "87",
+            "news_updated": "1707767761505",
+            "last_name": "Kelce",
+            "injury_status": "",
+            "first_name": "Travis"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 1,
+        "roster_id": null,
+        "player_id": "7564",
+        "picked_by": "",
+        "pick_no": 8,
+        "metadata": {
+            "years_exp": "3",
+            "team": "CIN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "7564",
+            "number": "1",
+            "news_updated": "1704678327690",
+            "last_name": "Chase",
+            "injury_status": "",
+            "first_name": "Ja'Marr"
+        },
+        "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
@@ -204,37 +204,14 @@
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 1,
         "roster_id": null,
-        "player_id": "5859",
-        "picked_by": "",
-        "pick_no": 10,
-        "metadata": {
-            "years_exp": "5",
-            "team": "PHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "5859",
-            "number": "11",
-            "news_updated": "1708799454555",
-            "last_name": "Brown",
-            "injury_status": "",
-            "first_name": "A.J."
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 2,
-        "roster_id": null,
         "player_id": "4866",
         "picked_by": "",
-        "pick_no": 11,
+        "pick_no": 10,
         "metadata": {
             "years_exp": "6",
             "team": "PHI",
@@ -250,7 +227,30 @@
         },
         "is_keeper": null,
         "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 2,
+        "roster_id": null,
+        "player_id": "5859",
+        "picked_by": "",
+        "pick_no": 11,
+        "metadata": {
+            "years_exp": "5",
+            "team": "PHI",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "5859",
+            "number": "11",
+            "news_updated": "1708799454555",
+            "last_name": "Brown",
+            "injury_status": "",
+            "first_name": "A.J."
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
@@ -273,30 +273,30 @@
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
         "roster_id": null,
-        "player_id": "4039",
+        "player_id": "2133",
         "picked_by": "",
         "pick_no": 13,
         "metadata": {
-            "years_exp": "7",
-            "team": "LAR",
+            "years_exp": "10",
+            "team": "LV",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "4039",
-            "number": "10",
-            "news_updated": "1705313752963",
-            "last_name": "Kupp",
+            "player_id": "2133",
+            "number": "17",
+            "news_updated": "1709066423313",
+            "last_name": "Adams",
             "injury_status": "",
-            "first_name": "Cooper"
+            "first_name": "Davante"
         },
         "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
@@ -319,7 +319,7 @@
         },
         "is_keeper": null,
         "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
@@ -342,60 +342,14 @@
         },
         "is_keeper": null,
         "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 2,
-        "roster_id": null,
-        "player_id": "6786",
-        "picked_by": "738962794141077504",
-        "pick_no": 16,
-        "metadata": {
-            "years_exp": "4",
-            "team": "DAL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "6786",
-            "number": "88",
-            "news_updated": "1705292749717",
-            "last_name": "Lamb",
-            "injury_status": "",
-            "first_name": "CeeDee"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 2,
-        "roster_id": null,
-        "player_id": "2133",
-        "picked_by": "",
-        "pick_no": 17,
-        "metadata": {
-            "years_exp": "10",
-            "team": "LV",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "2133",
-            "number": "17",
-            "news_updated": "1709066423313",
-            "last_name": "Adams",
-            "injury_status": "",
-            "first_name": "Davante"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
         "roster_id": null,
         "player_id": "5850",
         "picked_by": "",
-        "pick_no": 18,
+        "pick_no": 16,
         "metadata": {
             "years_exp": "5",
             "team": "GB",
@@ -410,8 +364,54 @@
             "first_name": "Josh"
         },
         "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 2,
+        "roster_id": null,
+        "player_id": "6786",
+        "picked_by": "738962794141077504",
+        "pick_no": 17,
+        "metadata": {
+            "years_exp": "4",
+            "team": "DAL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "6786",
+            "number": "88",
+            "news_updated": "1705292749717",
+            "last_name": "Lamb",
+            "injury_status": "",
+            "first_name": "CeeDee"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 2,
+        "roster_id": null,
+        "player_id": "4039",
+        "picked_by": "",
+        "pick_no": 18,
+        "metadata": {
+            "years_exp": "7",
+            "team": "LAR",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "4039",
+            "number": "10",
+            "news_updated": "1705313752963",
+            "last_name": "Kupp",
+            "injury_status": "",
+            "first_name": "Cooper"
+        },
+        "is_keeper": null,
         "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
@@ -434,60 +434,14 @@
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 2,
         "roster_id": null,
-        "player_id": "6904",
-        "picked_by": "",
-        "pick_no": 20,
-        "metadata": {
-            "years_exp": "4",
-            "team": "PHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "6904",
-            "number": "1",
-            "news_updated": "1705419607849",
-            "last_name": "Hurts",
-            "injury_status": "",
-            "first_name": "Jalen"
-        },
-        "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "8146",
-        "picked_by": "",
-        "pick_no": 21,
-        "metadata": {
-            "years_exp": "2",
-            "team": "NYJ",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "8146",
-            "number": "17",
-            "news_updated": "1704729334216",
-            "last_name": "Wilson",
-            "injury_status": "",
-            "first_name": "Garrett"
-        },
-        "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
         "player_id": "7547",
         "picked_by": "",
-        "pick_no": 22,
+        "pick_no": 20,
         "metadata": {
             "years_exp": "3",
             "team": "DET",
@@ -502,107 +456,15 @@
             "first_name": "Amon-Ra"
         },
         "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "7528",
-        "picked_by": "",
-        "pick_no": 23,
-        "metadata": {
-            "years_exp": "3",
-            "team": "PIT",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "7528",
-            "number": "22",
-            "news_updated": "1709269245133",
-            "last_name": "Harris",
-            "injury_status": "",
-            "first_name": "Najee"
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "5012",
-        "picked_by": "",
-        "pick_no": 24,
-        "metadata": {
-            "years_exp": "6",
-            "team": "BAL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "5012",
-            "number": "89",
-            "news_updated": "1706587546038",
-            "last_name": "Andrews",
-            "injury_status": "",
-            "first_name": "Mark"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "8150",
-        "picked_by": "738962794141077504",
-        "pick_no": 25,
-        "metadata": {
-            "years_exp": "2",
-            "team": "LAR",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8150",
-            "number": "23",
-            "news_updated": "1705517762233",
-            "last_name": "Williams",
-            "injury_status": "",
-            "first_name": "Kyren"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "7543",
-        "picked_by": "",
-        "pick_no": 26,
-        "metadata": {
-            "years_exp": "3",
-            "team": "JAX",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "7543",
-            "number": "1",
-            "news_updated": "1704698430779",
-            "last_name": "Etienne",
-            "injury_status": "",
-            "first_name": "Travis"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 3,
         "roster_id": null,
         "player_id": "7526",
         "picked_by": "",
-        "pick_no": 27,
+        "pick_no": 21,
         "metadata": {
             "years_exp": "3",
             "team": "MIA",
@@ -617,130 +479,84 @@
             "first_name": "Jaylen"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 3,
         "roster_id": null,
-        "player_id": "8144",
+        "player_id": "8146",
         "picked_by": "",
-        "pick_no": 28,
-        "metadata": {
-            "years_exp": "2",
-            "team": "NO",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "8144",
-            "number": "12",
-            "news_updated": "1704672326688",
-            "last_name": "Olave",
-            "injury_status": "",
-            "first_name": "Chris"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "9221",
-        "picked_by": "",
-        "pick_no": 29,
-        "metadata": {
-            "years_exp": "1",
-            "team": "DET",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "9221",
-            "number": "26",
-            "news_updated": "1706499339269",
-            "last_name": "Gibbs",
-            "injury_status": "",
-            "first_name": "Jahmyr"
-        },
-        "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 3,
-        "roster_id": null,
-        "player_id": "6801",
-        "picked_by": "",
-        "pick_no": 30,
-        "metadata": {
-            "years_exp": "4",
-            "team": "CIN",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "6801",
-            "number": "5",
-            "news_updated": "1710167112190",
-            "last_name": "Higgins",
-            "injury_status": "",
-            "first_name": "Tee"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 4,
-        "roster_id": null,
-        "player_id": "4881",
-        "picked_by": "",
-        "pick_no": 31,
-        "metadata": {
-            "years_exp": "6",
-            "team": "BAL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "4881",
-            "number": "8",
-            "news_updated": "1707462928881",
-            "last_name": "Jackson",
-            "injury_status": "",
-            "first_name": "Lamar"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 4,
-        "roster_id": null,
-        "player_id": "8155",
-        "picked_by": "",
-        "pick_no": 32,
+        "pick_no": 22,
         "metadata": {
             "years_exp": "2",
             "team": "NYJ",
             "status": "Active",
             "sport": "nfl",
-            "position": "RB",
-            "player_id": "8155",
-            "number": "20",
-            "news_updated": "1704666025361",
-            "last_name": "Hall",
+            "position": "WR",
+            "player_id": "8146",
+            "number": "17",
+            "news_updated": "1704729334216",
+            "last_name": "Wilson",
             "injury_status": "",
-            "first_name": "Breece"
+            "first_name": "Garrett"
         },
         "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 4,
+        "round": 3,
+        "roster_id": null,
+        "player_id": "6904",
+        "picked_by": "",
+        "pick_no": 23,
+        "metadata": {
+            "years_exp": "4",
+            "team": "PHI",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "6904",
+            "number": "1",
+            "news_updated": "1705419607849",
+            "last_name": "Hurts",
+            "injury_status": "",
+            "first_name": "Jalen"
+        },
+        "is_keeper": null,
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 3,
+        "roster_id": null,
+        "player_id": "7528",
+        "picked_by": "738962794141077504",
+        "pick_no": 24,
+        "metadata": {
+            "years_exp": "3",
+            "team": "PIT",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "7528",
+            "number": "22",
+            "news_updated": "1709269245133",
+            "last_name": "Harris",
+            "injury_status": "",
+            "first_name": "Najee"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 3,
         "roster_id": null,
         "player_id": "4018",
         "picked_by": "",
-        "pick_no": 33,
+        "pick_no": 25,
         "metadata": {
             "years_exp": "7",
             "team": "CIN",
@@ -755,15 +571,84 @@
             "first_name": "Joe"
         },
         "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 4,
+        "round": 3,
+        "roster_id": null,
+        "player_id": "5012",
+        "picked_by": "",
+        "pick_no": 26,
+        "metadata": {
+            "years_exp": "6",
+            "team": "BAL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "5012",
+            "number": "89",
+            "news_updated": "1706587546038",
+            "last_name": "Andrews",
+            "injury_status": "",
+            "first_name": "Mark"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 3,
+        "roster_id": null,
+        "player_id": "8144",
+        "picked_by": "",
+        "pick_no": 27,
+        "metadata": {
+            "years_exp": "2",
+            "team": "NO",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "8144",
+            "number": "12",
+            "news_updated": "1704672326688",
+            "last_name": "Olave",
+            "injury_status": "",
+            "first_name": "Chris"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 3,
+        "roster_id": null,
+        "player_id": "6801",
+        "picked_by": "",
+        "pick_no": 28,
+        "metadata": {
+            "years_exp": "4",
+            "team": "CIN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "6801",
+            "number": "5",
+            "news_updated": "1710167112190",
+            "last_name": "Higgins",
+            "injury_status": "",
+            "first_name": "Tee"
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 3,
         "roster_id": null,
         "player_id": "7611",
         "picked_by": "",
-        "pick_no": 34,
+        "pick_no": 29,
         "metadata": {
             "years_exp": "3",
             "team": "NE",
@@ -778,84 +663,61 @@
             "first_name": "Rhamondre"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 4,
+        "round": 3,
         "roster_id": null,
-        "player_id": "7525",
+        "player_id": "9221",
         "picked_by": "",
-        "pick_no": 35,
+        "pick_no": 30,
         "metadata": {
-            "years_exp": "3",
-            "team": "PHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "7525",
-            "number": "6",
-            "news_updated": "1709146531008",
-            "last_name": "Smith",
-            "injury_status": "",
-            "first_name": "DeVonta"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 4,
-        "roster_id": null,
-        "player_id": "6813",
-        "picked_by": "738962794141077504",
-        "pick_no": 36,
-        "metadata": {
-            "years_exp": "4",
-            "team": "IND",
+            "years_exp": "1",
+            "team": "DET",
             "status": "Active",
             "sport": "nfl",
             "position": "RB",
-            "player_id": "6813",
-            "number": "28",
-            "news_updated": "1704609613850",
-            "last_name": "Taylor",
+            "player_id": "9221",
+            "number": "26",
+            "news_updated": "1706499339269",
+            "last_name": "Gibbs",
             "injury_status": "",
-            "first_name": "Jonathan"
+            "first_name": "Jahmyr"
         },
         "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 4,
         "roster_id": null,
-        "player_id": "1479",
+        "player_id": "7543",
         "picked_by": "",
-        "pick_no": 37,
+        "pick_no": 31,
         "metadata": {
-            "years_exp": "11",
-            "team": "LAC",
+            "years_exp": "3",
+            "team": "JAX",
             "status": "Active",
             "sport": "nfl",
-            "position": "WR",
-            "player_id": "1479",
-            "number": "13",
-            "news_updated": "1710107106642",
-            "last_name": "Allen",
+            "position": "RB",
+            "player_id": "7543",
+            "number": "1",
+            "news_updated": "1704698430779",
+            "last_name": "Etienne",
             "injury_status": "",
-            "first_name": "Keenan"
+            "first_name": "Travis"
         },
         "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 4,
         "roster_id": null,
         "player_id": "5872",
         "picked_by": "",
-        "pick_no": 38,
+        "pick_no": 32,
         "metadata": {
             "years_exp": "5",
             "team": "SF",
@@ -870,15 +732,15 @@
             "first_name": "Deebo"
         },
         "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 4,
         "roster_id": null,
         "player_id": "6770",
         "picked_by": "",
-        "pick_no": 39,
+        "pick_no": 33,
         "metadata": {
             "years_exp": "4",
             "team": "CIN",
@@ -893,15 +755,84 @@
             "first_name": "Joe"
         },
         "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 4,
+        "roster_id": null,
+        "player_id": "6797",
+        "picked_by": "",
+        "pick_no": 34,
+        "metadata": {
+            "years_exp": "4",
+            "team": "LAC",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "6797",
+            "number": "10",
+            "news_updated": "1702402857186",
+            "last_name": "Herbert",
+            "injury_status": "",
+            "first_name": "Justin"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 4,
+        "roster_id": null,
+        "player_id": "4199",
+        "picked_by": "",
+        "pick_no": 35,
+        "metadata": {
+            "years_exp": "7",
+            "team": "GB",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4199",
+            "number": "33",
+            "news_updated": "1710210037802",
+            "last_name": "Jones",
+            "injury_status": "",
+            "first_name": "Aaron"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 4,
+        "roster_id": null,
+        "player_id": "4881",
+        "picked_by": "",
+        "pick_no": 36,
+        "metadata": {
+            "years_exp": "6",
+            "team": "BAL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "4881",
+            "number": "8",
+            "news_updated": "1707462928881",
+            "last_name": "Jackson",
+            "injury_status": "",
+            "first_name": "Lamar"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 4,
         "roster_id": null,
         "player_id": "5846",
-        "picked_by": "",
-        "pick_no": 40,
+        "picked_by": "738962794141077504",
+        "pick_no": 37,
         "metadata": {
             "years_exp": "5",
             "team": "SEA",
@@ -916,15 +847,15 @@
             "first_name": "DK"
         },
         "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 5,
+        "round": 4,
         "roster_id": null,
         "player_id": "8151",
         "picked_by": "",
-        "pick_no": 41,
+        "pick_no": 38,
         "metadata": {
             "years_exp": "2",
             "team": "SEA",
@@ -939,15 +870,15 @@
             "first_name": "Kenneth"
         },
         "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 5,
+        "round": 4,
         "roster_id": null,
         "player_id": "4981",
         "picked_by": "",
-        "pick_no": 42,
+        "pick_no": 39,
         "metadata": {
             "years_exp": "6",
             "team": "JAX",
@@ -963,83 +894,60 @@
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 5,
+        "round": 4,
         "roster_id": null,
-        "player_id": "6806",
+        "player_id": "7525",
         "picked_by": "",
-        "pick_no": 43,
+        "pick_no": 40,
         "metadata": {
-            "years_exp": "4",
-            "team": "BAL",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "6806",
-            "number": "27",
-            "news_updated": "1709268645061",
-            "last_name": "Dobbins",
-            "injury_status": "",
-            "first_name": "J.K."
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 5,
-        "roster_id": null,
-        "player_id": "4199",
-        "picked_by": "",
-        "pick_no": 44,
-        "metadata": {
-            "years_exp": "7",
-            "team": "GB",
+            "years_exp": "3",
+            "team": "PHI",
             "status": "Active",
             "sport": "nfl",
-            "position": "RB",
-            "player_id": "4199",
-            "number": "33",
-            "news_updated": "1710210037802",
-            "last_name": "Jones",
+            "position": "WR",
+            "player_id": "7525",
+            "number": "6",
+            "news_updated": "1709146531008",
+            "last_name": "Smith",
             "injury_status": "",
-            "first_name": "Aaron"
+            "first_name": "DeVonta"
         },
         "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
-        "player_id": "9758",
-        "picked_by": "738962794141077504",
-        "pick_no": 45,
+        "player_id": "1479",
+        "picked_by": "",
+        "pick_no": 41,
         "metadata": {
-            "years_exp": "1",
-            "team": "HOU",
+            "years_exp": "11",
+            "team": "LAC",
             "status": "Active",
             "sport": "nfl",
-            "position": "QB",
-            "player_id": "9758",
-            "number": "7",
-            "news_updated": "1707446127618",
-            "last_name": "Stroud",
+            "position": "WR",
+            "player_id": "1479",
+            "number": "13",
+            "news_updated": "1710107106642",
+            "last_name": "Allen",
             "injury_status": "",
-            "first_name": "C.J."
+            "first_name": "Keenan"
         },
         "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
         "player_id": "2309",
         "picked_by": "",
-        "pick_no": 46,
+        "pick_no": 42,
         "metadata": {
             "years_exp": "9",
             "team": "CLE",
@@ -1054,15 +962,15 @@
             "first_name": "Amari"
         },
         "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
         "player_id": "4217",
         "picked_by": "",
-        "pick_no": 47,
+        "pick_no": 43,
         "metadata": {
             "years_exp": "7",
             "team": "SF",
@@ -1077,38 +985,61 @@
             "first_name": "George"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
-        "player_id": "6797",
-        "picked_by": "",
-        "pick_no": 48,
+        "player_id": "6813",
+        "picked_by": "738962794141077504",
+        "pick_no": 44,
         "metadata": {
             "years_exp": "4",
-            "team": "LAC",
-            "status": "Inactive",
+            "team": "IND",
+            "status": "Active",
             "sport": "nfl",
-            "position": "QB",
-            "player_id": "6797",
-            "number": "10",
-            "news_updated": "1702402857186",
-            "last_name": "Herbert",
+            "position": "RB",
+            "player_id": "6813",
+            "number": "28",
+            "news_updated": "1704609613850",
+            "last_name": "Taylor",
             "injury_status": "",
-            "first_name": "Justin"
+            "first_name": "Jonathan"
         },
         "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 5,
+        "roster_id": null,
+        "player_id": "8155",
+        "picked_by": "",
+        "pick_no": 45,
+        "metadata": {
+            "years_exp": "2",
+            "team": "NYJ",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "8155",
+            "number": "20",
+            "news_updated": "1704666025361",
+            "last_name": "Hall",
+            "injury_status": "",
+            "first_name": "Breece"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
         "player_id": "8129",
         "picked_by": "",
-        "pick_no": 49,
+        "pick_no": 46,
         "metadata": {
             "years_exp": "2",
             "team": "HOU",
@@ -1123,15 +1054,61 @@
             "first_name": "Dameon"
         },
         "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 5,
+        "roster_id": null,
+        "player_id": "6806",
+        "picked_by": "",
+        "pick_no": 47,
+        "metadata": {
+            "years_exp": "4",
+            "team": "BAL",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "6806",
+            "number": "27",
+            "news_updated": "1709268645061",
+            "last_name": "Dobbins",
+            "injury_status": "",
+            "first_name": "J.K."
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 5,
+        "roster_id": null,
+        "player_id": "5844",
+        "picked_by": "",
+        "pick_no": 48,
+        "metadata": {
+            "years_exp": "5",
+            "team": "MIN",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "5844",
+            "number": "87",
+            "news_updated": "1707405659106",
+            "last_name": "Hockenson",
+            "injury_status": "",
+            "first_name": "T.J."
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 5,
         "roster_id": null,
         "player_id": "1426",
         "picked_by": "",
-        "pick_no": 50,
+        "pick_no": 49,
         "metadata": {
             "years_exp": "11",
             "team": "TEN",
@@ -1146,31 +1123,54 @@
             "first_name": "DeAndre"
         },
         "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 5,
+        "roster_id": null,
+        "player_id": "5987",
+        "picked_by": "",
+        "pick_no": 50,
+        "metadata": {
+            "years_exp": "5",
+            "team": "",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "5987",
+            "number": "2",
+            "news_updated": "1709583320393",
+            "last_name": "Mattison",
+            "injury_status": "",
+            "first_name": "Alexander"
+        },
+        "is_keeper": null,
         "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
-        "player_id": "4983",
+        "player_id": "5927",
         "picked_by": "",
         "pick_no": 51,
         "metadata": {
-            "years_exp": "6",
-            "team": "CHI",
+            "years_exp": "5",
+            "team": "WAS",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "4983",
-            "number": "2",
-            "news_updated": "1704684327454",
-            "last_name": "Moore",
+            "player_id": "5927",
+            "number": "17",
+            "news_updated": "1704684028510",
+            "last_name": "McLaurin",
             "injury_status": "",
-            "first_name": "DJ"
+            "first_name": "Terry"
         },
         "is_keeper": null,
         "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
@@ -1193,37 +1193,60 @@
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
-        "player_id": "5927",
+        "player_id": "4983",
         "picked_by": "",
         "pick_no": 53,
         "metadata": {
-            "years_exp": "5",
-            "team": "WAS",
+            "years_exp": "6",
+            "team": "CHI",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "5927",
-            "number": "17",
-            "news_updated": "1704684028510",
-            "last_name": "McLaurin",
+            "player_id": "4983",
+            "number": "2",
+            "news_updated": "1704684327454",
+            "last_name": "Moore",
             "injury_status": "",
-            "first_name": "Terry"
+            "first_name": "DJ"
         },
         "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 6,
+        "roster_id": null,
+        "player_id": "4035",
+        "picked_by": "",
+        "pick_no": 54,
+        "metadata": {
+            "years_exp": "7",
+            "team": "NO",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4035",
+            "number": "41",
+            "news_updated": "1708542609915",
+            "last_name": "Kamara",
+            "injury_status": "",
+            "first_name": "Alvin"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
         "player_id": "6938",
         "picked_by": "",
-        "pick_no": 54,
+        "pick_no": 55,
         "metadata": {
             "years_exp": "4",
             "team": "MIN",
@@ -1238,60 +1261,37 @@
             "first_name": "Cam"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 6,
-        "roster_id": null,
-        "player_id": "5987",
-        "picked_by": "",
-        "pick_no": 55,
-        "metadata": {
-            "years_exp": "5",
-            "team": "",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "5987",
-            "number": "2",
-            "news_updated": "1709583320393",
-            "last_name": "Mattison",
-            "injury_status": "",
-            "first_name": "Alexander"
-        },
-        "is_keeper": null,
         "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
-        "player_id": "10859",
-        "picked_by": "738962794141077504",
+        "player_id": "8167",
+        "picked_by": "",
         "pick_no": 56,
         "metadata": {
-            "years_exp": "1",
-            "team": "DET",
+            "years_exp": "2",
+            "team": "GB",
             "status": "Active",
             "sport": "nfl",
-            "position": "TE",
-            "player_id": "10859",
-            "number": "87",
-            "news_updated": "1706500239155",
-            "last_name": "LaPorta",
+            "position": "WR",
+            "player_id": "8167",
+            "number": "9",
+            "news_updated": "1705956049603",
+            "last_name": "Watson",
             "injury_status": "",
-            "first_name": "Sam"
+            "first_name": "Christian"
         },
         "is_keeper": null,
         "draft_slot": 5,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
         "player_id": "7523",
-        "picked_by": "",
+        "picked_by": "738962794141077504",
         "pick_no": 57,
         "metadata": {
             "years_exp": "3",
@@ -1308,14 +1308,60 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 6,
+        "roster_id": null,
+        "player_id": "4137",
+        "picked_by": "",
+        "pick_no": 58,
+        "metadata": {
+            "years_exp": "7",
+            "team": "ARI",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4137",
+            "number": "6",
+            "news_updated": "1704693628621",
+            "last_name": "Conner",
+            "injury_status": "",
+            "first_name": "James"
+        },
+        "is_keeper": null,
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 6,
+        "roster_id": null,
+        "player_id": "2505",
+        "picked_by": "",
+        "pick_no": 59,
+        "metadata": {
+            "years_exp": "9",
+            "team": "NYG",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "2505",
+            "number": "12",
+            "news_updated": "1709822434402",
+            "last_name": "Waller",
+            "injury_status": "",
+            "first_name": "Darren"
+        },
+        "is_keeper": null,
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 6,
         "roster_id": null,
         "player_id": "7591",
         "picked_by": "",
-        "pick_no": 58,
+        "pick_no": 60,
         "metadata": {
             "years_exp": "3",
             "team": "CHI",
@@ -1330,129 +1376,83 @@
             "first_name": "Justin"
         },
         "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 6,
-        "roster_id": null,
-        "player_id": "5844",
-        "picked_by": "",
-        "pick_no": 59,
-        "metadata": {
-            "years_exp": "5",
-            "team": "MIN",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "5844",
-            "number": "87",
-            "news_updated": "1707405659106",
-            "last_name": "Hockenson",
-            "injury_status": "",
-            "first_name": "T.J."
-        },
-        "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 6,
-        "roster_id": null,
-        "player_id": "7553",
-        "picked_by": "",
-        "pick_no": 60,
-        "metadata": {
-            "years_exp": "3",
-            "team": "ATL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "7553",
-            "number": "8",
-            "news_updated": "1709065823303",
-            "last_name": "Pitts",
-            "injury_status": "",
-            "first_name": "Kyle"
-        },
-        "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "4035",
+        "player_id": "4029",
         "picked_by": "",
         "pick_no": 61,
         "metadata": {
             "years_exp": "7",
-            "team": "NO",
+            "team": "BAL",
             "status": "Active",
             "sport": "nfl",
             "position": "RB",
-            "player_id": "4035",
-            "number": "41",
-            "news_updated": "1708542609915",
-            "last_name": "Kamara",
+            "player_id": "4029",
+            "number": "31",
+            "news_updated": "1708443302115",
+            "last_name": "Cook",
             "injury_status": "",
-            "first_name": "Alvin"
+            "first_name": "Dalvin"
         },
         "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "8167",
+        "player_id": "6790",
         "picked_by": "",
         "pick_no": 62,
         "metadata": {
-            "years_exp": "2",
-            "team": "GB",
+            "years_exp": "4",
+            "team": "CHI",
             "status": "Active",
             "sport": "nfl",
-            "position": "WR",
-            "player_id": "8167",
-            "number": "9",
-            "news_updated": "1705956049603",
-            "last_name": "Watson",
+            "position": "RB",
+            "player_id": "6790",
+            "number": "0",
+            "news_updated": "1710175512469",
+            "last_name": "Swift",
             "injury_status": "",
-            "first_name": "Christian"
+            "first_name": "D'Andre"
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "5022",
+        "player_id": "8112",
         "picked_by": "",
         "pick_no": 63,
         "metadata": {
-            "years_exp": "6",
-            "team": "PHI",
+            "years_exp": "2",
+            "team": "ATL",
             "status": "Active",
             "sport": "nfl",
-            "position": "TE",
-            "player_id": "5022",
-            "number": "88",
-            "news_updated": "1705419908036",
-            "last_name": "Goedert",
+            "position": "WR",
+            "player_id": "8112",
+            "number": "5",
+            "news_updated": "1704671126295",
+            "last_name": "London",
             "injury_status": "",
-            "first_name": "Dallas"
+            "first_name": "Drake"
         },
         "is_keeper": null,
         "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
         "player_id": "7588",
-        "picked_by": "",
+        "picked_by": "738962794141077504",
         "pick_no": 64,
         "metadata": {
             "years_exp": "3",
@@ -1469,106 +1469,152 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "9493",
-        "picked_by": "738962794141077504",
+        "player_id": "5022",
+        "picked_by": "",
         "pick_no": 65,
         "metadata": {
-            "years_exp": "1",
-            "team": "LAR",
+            "years_exp": "6",
+            "team": "PHI",
             "status": "Active",
             "sport": "nfl",
-            "position": "WR",
-            "player_id": "9493",
-            "number": "17",
-            "news_updated": "1705292450293",
-            "last_name": "Nacua",
+            "position": "TE",
+            "player_id": "5022",
+            "number": "88",
+            "news_updated": "1705419908036",
+            "last_name": "Goedert",
             "injury_status": "",
-            "first_name": "Puka"
+            "first_name": "Dallas"
         },
         "is_keeper": null,
         "draft_slot": 5,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "8112",
+        "player_id": "6783",
         "picked_by": "",
         "pick_no": 66,
         "metadata": {
-            "years_exp": "2",
-            "team": "ATL",
+            "years_exp": "4",
+            "team": "CLE",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "8112",
-            "number": "5",
-            "news_updated": "1704671126295",
-            "last_name": "London",
+            "player_id": "6783",
+            "number": "10",
+            "news_updated": "1710006657615",
+            "last_name": "Jeudy",
             "injury_status": "",
-            "first_name": "Drake"
+            "first_name": "Jerry"
         },
         "is_keeper": null,
         "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "4137",
+        "player_id": "4068",
         "picked_by": "",
         "pick_no": 67,
         "metadata": {
             "years_exp": "7",
-            "team": "ARI",
-            "status": "Active",
+            "team": "LAC",
+            "status": "Inactive",
             "sport": "nfl",
-            "position": "RB",
-            "player_id": "4137",
-            "number": "6",
-            "news_updated": "1704693628621",
-            "last_name": "Conner",
+            "position": "WR",
+            "player_id": "4068",
+            "number": "81",
+            "news_updated": "1710164411367",
+            "last_name": "Williams",
             "injury_status": "",
-            "first_name": "James"
+            "first_name": "Mike"
         },
         "is_keeper": null,
         "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "2505",
+        "player_id": "8136",
         "picked_by": "",
         "pick_no": 68,
         "metadata": {
-            "years_exp": "9",
-            "team": "NYG",
+            "years_exp": "2",
+            "team": "TB",
             "status": "Active",
             "sport": "nfl",
-            "position": "TE",
-            "player_id": "2505",
-            "number": "12",
-            "news_updated": "1709822434402",
-            "last_name": "Waller",
+            "position": "RB",
+            "player_id": "8136",
+            "number": "1",
+            "news_updated": "1705880417432",
+            "last_name": "White",
             "injury_status": "",
-            "first_name": "Darren"
+            "first_name": "Rachaad"
         },
         "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 7,
         "roster_id": null,
-        "player_id": "6803",
+        "player_id": "7553",
         "picked_by": "",
         "pick_no": 69,
+        "metadata": {
+            "years_exp": "3",
+            "team": "ATL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "7553",
+            "number": "8",
+            "news_updated": "1709065823303",
+            "last_name": "Pitts",
+            "injury_status": "",
+            "first_name": "Kyle"
+        },
+        "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 7,
+        "roster_id": null,
+        "player_id": "4037",
+        "picked_by": "",
+        "pick_no": 70,
+        "metadata": {
+            "years_exp": "7",
+            "team": "TB",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "4037",
+            "number": "14",
+            "news_updated": "1707267012656",
+            "last_name": "Godwin",
+            "injury_status": "",
+            "first_name": "Chris"
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 8,
+        "roster_id": null,
+        "player_id": "6803",
+        "picked_by": "",
+        "pick_no": 71,
         "metadata": {
             "years_exp": "4",
             "team": "SF",
@@ -1583,54 +1629,8 @@
             "first_name": "Brandon"
         },
         "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 7,
-        "roster_id": null,
-        "player_id": "6790",
-        "picked_by": "",
-        "pick_no": 70,
-        "metadata": {
-            "years_exp": "4",
-            "team": "CHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "6790",
-            "number": "0",
-            "news_updated": "1710175512469",
-            "last_name": "Swift",
-            "injury_status": "",
-            "first_name": "D'Andre"
-        },
-        "is_keeper": null,
         "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 8,
-        "roster_id": null,
-        "player_id": "2216",
-        "picked_by": "",
-        "pick_no": 71,
-        "metadata": {
-            "years_exp": "10",
-            "team": "TB",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "2216",
-            "number": "13",
-            "news_updated": "1709579419232",
-            "last_name": "Evans",
-            "injury_status": "",
-            "first_name": "Mike"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
@@ -1653,14 +1653,37 @@
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 8,
+        "roster_id": null,
+        "player_id": "8138",
+        "picked_by": "",
+        "pick_no": 73,
+        "metadata": {
+            "years_exp": "2",
+            "team": "BUF",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "8138",
+            "number": "4",
+            "news_updated": "1705894818898",
+            "last_name": "Cook",
+            "injury_status": "",
+            "first_name": "James"
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
         "roster_id": null,
         "player_id": "2374",
         "picked_by": "",
-        "pick_no": 73,
+        "pick_no": 74,
         "metadata": {
             "years_exp": "9",
             "team": "SEA",
@@ -1675,130 +1698,61 @@
             "first_name": "Tyler"
         },
         "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 8,
-        "roster_id": null,
-        "player_id": "4017",
-        "picked_by": "",
-        "pick_no": 74,
-        "metadata": {
-            "years_exp": "7",
-            "team": "CLE",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "4017",
-            "number": "4",
-            "news_updated": "1709070621820",
-            "last_name": "Watson",
-            "injury_status": "",
-            "first_name": "Deshaun"
-        },
-        "is_keeper": null,
         "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
         "roster_id": null,
-        "player_id": "4029",
+        "player_id": "8137",
         "picked_by": "",
         "pick_no": 75,
         "metadata": {
-            "years_exp": "7",
-            "team": "BAL",
+            "years_exp": "2",
+            "team": "PIT",
             "status": "Active",
             "sport": "nfl",
-            "position": "RB",
-            "player_id": "4029",
-            "number": "31",
-            "news_updated": "1708443302115",
-            "last_name": "Cook",
+            "position": "WR",
+            "player_id": "8137",
+            "number": "14",
+            "news_updated": "1705372202342",
+            "last_name": "Pickens",
             "injury_status": "",
-            "first_name": "Dalvin"
+            "first_name": "George"
         },
         "is_keeper": null,
         "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
         "roster_id": null,
-        "player_id": "7569",
-        "picked_by": "738962794141077504",
+        "player_id": "2216",
+        "picked_by": "",
         "pick_no": 76,
         "metadata": {
-            "years_exp": "3",
-            "team": "HOU",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "7569",
-            "number": "12",
-            "news_updated": "1705802108474",
-            "last_name": "Collins",
-            "injury_status": "",
-            "first_name": "Nico"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 8,
-        "roster_id": null,
-        "player_id": "4068",
-        "picked_by": "",
-        "pick_no": 77,
-        "metadata": {
-            "years_exp": "7",
-            "team": "LAC",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "4068",
-            "number": "81",
-            "news_updated": "1710164411367",
-            "last_name": "Williams",
-            "injury_status": "",
-            "first_name": "Mike"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 8,
-        "roster_id": null,
-        "player_id": "4037",
-        "picked_by": "",
-        "pick_no": 78,
-        "metadata": {
-            "years_exp": "7",
+            "years_exp": "10",
             "team": "TB",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "4037",
-            "number": "14",
-            "news_updated": "1707267012656",
-            "last_name": "Godwin",
+            "player_id": "2216",
+            "number": "13",
+            "news_updated": "1709579419232",
+            "last_name": "Evans",
             "injury_status": "",
-            "first_name": "Chris"
+            "first_name": "Mike"
         },
         "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
         "roster_id": null,
         "player_id": "5892",
-        "picked_by": "",
-        "pick_no": 79,
+        "picked_by": "738962794141077504",
+        "pick_no": 77,
         "metadata": {
             "years_exp": "5",
             "team": "DET",
@@ -1813,84 +1767,61 @@
             "first_name": "David"
         },
         "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 8,
         "roster_id": null,
-        "player_id": "8136",
+        "player_id": "6943",
         "picked_by": "",
-        "pick_no": 80,
-        "metadata": {
-            "years_exp": "2",
-            "team": "TB",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8136",
-            "number": "1",
-            "news_updated": "1705880417432",
-            "last_name": "White",
-            "injury_status": "",
-            "first_name": "Rachaad"
-        },
-        "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "6819",
-        "picked_by": "",
-        "pick_no": 81,
+        "pick_no": 78,
         "metadata": {
             "years_exp": "4",
-            "team": "IND",
+            "team": "JAX",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "6819",
-            "number": "11",
-            "news_updated": "1710175212460",
-            "last_name": "Pittman",
+            "player_id": "6943",
+            "number": "13",
+            "news_updated": "1710178513574",
+            "last_name": "Davis",
             "injury_status": "",
-            "first_name": "Michael"
+            "first_name": "Gabe"
         },
         "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 9,
+        "round": 8,
         "roster_id": null,
-        "player_id": "6783",
+        "player_id": "4017",
         "picked_by": "",
-        "pick_no": 82,
+        "pick_no": 79,
         "metadata": {
-            "years_exp": "4",
+            "years_exp": "7",
             "team": "CLE",
-            "status": "Active",
+            "status": "Inactive",
             "sport": "nfl",
-            "position": "WR",
-            "player_id": "6783",
-            "number": "10",
-            "news_updated": "1710006657615",
-            "last_name": "Jeudy",
+            "position": "QB",
+            "player_id": "4017",
+            "number": "4",
+            "news_updated": "1709070621820",
+            "last_name": "Watson",
             "injury_status": "",
-            "first_name": "Jerry"
+            "first_name": "Deshaun"
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 9,
+        "round": 8,
         "roster_id": null,
         "player_id": "4950",
         "picked_by": "",
-        "pick_no": 83,
+        "pick_no": 80,
         "metadata": {
             "years_exp": "6",
             "team": "JAX",
@@ -1905,14 +1836,83 @@
             "first_name": "Christian"
         },
         "is_keeper": null,
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 9,
+        "roster_id": null,
+        "player_id": "5937",
+        "picked_by": "",
+        "pick_no": 81,
+        "metadata": {
+            "years_exp": "5",
+            "team": "PIT",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "5937",
+            "number": "18",
+            "news_updated": "1710043801404",
+            "last_name": "Johnson",
+            "injury_status": "",
+            "first_name": "Diontae"
+        },
+        "is_keeper": null,
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 9,
+        "roster_id": null,
+        "player_id": "6819",
+        "picked_by": "",
+        "pick_no": 82,
+        "metadata": {
+            "years_exp": "4",
+            "team": "IND",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "6819",
+            "number": "11",
+            "news_updated": "1710175212460",
+            "last_name": "Pittman",
+            "injury_status": "",
+            "first_name": "Michael"
+        },
+        "is_keeper": null,
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 9,
+        "roster_id": null,
+        "player_id": "8119",
+        "picked_by": "",
+        "pick_no": 83,
+        "metadata": {
+            "years_exp": "2",
+            "team": "WAS",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "8119",
+            "number": "1",
+            "news_updated": "1704807044950",
+            "last_name": "Dotson",
+            "injury_status": "",
+            "first_name": "Jahan"
+        },
+        "is_keeper": null,
         "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 9,
         "roster_id": null,
         "player_id": "5848",
-        "picked_by": "",
+        "picked_by": "738962794141077504",
         "pick_no": 84,
         "metadata": {
             "years_exp": "5",
@@ -1929,175 +1929,14 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 9,
-        "roster_id": null,
-        "player_id": "9226",
-        "picked_by": "738962794141077504",
-        "pick_no": 85,
-        "metadata": {
-            "years_exp": "1",
-            "team": "MIA",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "9226",
-            "number": "28",
-            "news_updated": "1705209337495",
-            "last_name": "Achane",
-            "injury_status": "",
-            "first_name": "De'Von"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "8138",
-        "picked_by": "",
-        "pick_no": 86,
-        "metadata": {
-            "years_exp": "2",
-            "team": "BUF",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8138",
-            "number": "4",
-            "news_updated": "1705894818898",
-            "last_name": "Cook",
-            "injury_status": "",
-            "first_name": "James"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "8119",
-        "picked_by": "",
-        "pick_no": 87,
-        "metadata": {
-            "years_exp": "2",
-            "team": "WAS",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "8119",
-            "number": "1",
-            "news_updated": "1704807044950",
-            "last_name": "Dotson",
-            "injury_status": "",
-            "first_name": "Jahan"
-        },
-        "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "5937",
-        "picked_by": "",
-        "pick_no": 88,
-        "metadata": {
-            "years_exp": "5",
-            "team": "PIT",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "5937",
-            "number": "18",
-            "news_updated": "1710043801404",
-            "last_name": "Johnson",
-            "injury_status": "",
-            "first_name": "Diontae"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "4066",
-        "picked_by": "",
-        "pick_no": 89,
-        "metadata": {
-            "years_exp": "7",
-            "team": "JAX",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "4066",
-            "number": "17",
-            "news_updated": "1704699030696",
-            "last_name": "Engram",
-            "injury_status": "",
-            "first_name": "Evan"
-        },
-        "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 9,
-        "roster_id": null,
-        "player_id": "6828",
-        "picked_by": "",
-        "pick_no": 90,
-        "metadata": {
-            "years_exp": "4",
-            "team": "GB",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "6828",
-            "number": "28",
-            "news_updated": "1709344252208",
-            "last_name": "Dillon",
-            "injury_status": "",
-            "first_name": "AJ"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
-        "roster_id": null,
-        "player_id": "8137",
-        "picked_by": "",
-        "pick_no": 91,
-        "metadata": {
-            "years_exp": "2",
-            "team": "PIT",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "8137",
-            "number": "14",
-            "news_updated": "1705372202342",
-            "last_name": "Pickens",
-            "injury_status": "",
-            "first_name": "George"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
         "roster_id": null,
         "player_id": "9488",
         "picked_by": "",
-        "pick_no": 92,
+        "pick_no": 85,
         "metadata": {
             "years_exp": "1",
             "team": "SEA",
@@ -2112,38 +1951,15 @@
             "first_name": "Jaxon"
         },
         "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 10,
-        "roster_id": null,
-        "player_id": "1264",
-        "picked_by": "",
-        "pick_no": 93,
-        "metadata": {
-            "years_exp": "12",
-            "team": "BAL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "K",
-            "player_id": "1264",
-            "number": "9",
-            "news_updated": "1705440330585",
-            "last_name": "Tucker",
-            "injury_status": "",
-            "first_name": "Justin"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
+        "round": 9,
         "roster_id": null,
         "player_id": "9756",
         "picked_by": "",
-        "pick_no": 94,
+        "pick_no": 86,
         "metadata": {
             "years_exp": "1",
             "team": "MIN",
@@ -2158,107 +1974,38 @@
             "first_name": "Jordan"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
-        "roster_id": null,
-        "player_id": "6943",
-        "picked_by": "",
-        "pick_no": 95,
-        "metadata": {
-            "years_exp": "4",
-            "team": "JAX",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "6943",
-            "number": "13",
-            "news_updated": "1710178513574",
-            "last_name": "Davis",
-            "injury_status": "",
-            "first_name": "Gabe"
-        },
-        "is_keeper": null,
         "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 10,
+        "round": 9,
         "roster_id": null,
-        "player_id": "6945",
-        "picked_by": "738962794141077504",
-        "pick_no": 96,
+        "player_id": "6828",
+        "picked_by": "",
+        "pick_no": 87,
         "metadata": {
             "years_exp": "4",
-            "team": "NE",
+            "team": "GB",
             "status": "Active",
             "sport": "nfl",
             "position": "RB",
-            "player_id": "6945",
-            "number": "24",
-            "news_updated": "1710184513555",
-            "last_name": "Gibson",
+            "player_id": "6828",
+            "number": "28",
+            "news_updated": "1709344252208",
+            "last_name": "Dillon",
             "injury_status": "",
-            "first_name": "Antonio"
+            "first_name": "AJ"
         },
         "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 10,
-        "roster_id": null,
-        "player_id": "4149",
-        "picked_by": "",
-        "pick_no": 97,
-        "metadata": {
-            "years_exp": "7",
-            "team": "NO",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "4149",
-            "number": "21",
-            "news_updated": "1704676827893",
-            "last_name": "Williams",
-            "injury_status": "",
-            "first_name": "Jamaal"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
-        "roster_id": null,
-        "player_id": "2197",
-        "picked_by": "",
-        "pick_no": 98,
-        "metadata": {
-            "years_exp": "10",
-            "team": "DAL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "2197",
-            "number": "3",
-            "news_updated": "1705942524067",
-            "last_name": "Cooks",
-            "injury_status": "",
-            "first_name": "Brandin"
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 10,
+        "round": 9,
         "roster_id": null,
         "player_id": "7608",
         "picked_by": "",
-        "pick_no": 99,
+        "pick_no": 88,
         "metadata": {
             "years_exp": "3",
             "team": "CHI",
@@ -2273,15 +2020,291 @@
             "first_name": "Khalil"
         },
         "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 9,
+        "roster_id": null,
+        "player_id": "4985",
+        "picked_by": "",
+        "pick_no": 89,
+        "metadata": {
+            "years_exp": "6",
+            "team": "PHI",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4985",
+            "number": "23",
+            "news_updated": "1705634105518",
+            "last_name": "Penny",
+            "injury_status": "",
+            "first_name": "Rashaad"
+        },
+        "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 9,
+        "roster_id": null,
+        "player_id": "7600",
+        "picked_by": "",
+        "pick_no": 90,
+        "metadata": {
+            "years_exp": "3",
+            "team": "PIT",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "7600",
+            "number": "88",
+            "news_updated": "1705374002186",
+            "last_name": "Freiermuth",
+            "injury_status": "",
+            "first_name": "Pat"
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 10,
         "roster_id": null,
-        "player_id": "4033",
+        "player_id": "3294",
+        "picked_by": "",
+        "pick_no": 91,
+        "metadata": {
+            "years_exp": "8",
+            "team": "DAL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "3294",
+            "number": "4",
+            "news_updated": "1709600122077",
+            "last_name": "Prescott",
+            "injury_status": "",
+            "first_name": "Dak"
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "6945",
+        "picked_by": "",
+        "pick_no": 92,
+        "metadata": {
+            "years_exp": "4",
+            "team": "NE",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "6945",
+            "number": "24",
+            "news_updated": "1710184513555",
+            "last_name": "Gibson",
+            "injury_status": "",
+            "first_name": "Antonio"
+        },
+        "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "8154",
+        "picked_by": "",
+        "pick_no": 93,
+        "metadata": {
+            "years_exp": "2",
+            "team": "WAS",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "8154",
+            "number": "8",
+            "news_updated": "1704683428246",
+            "last_name": "Robinson",
+            "injury_status": "",
+            "first_name": "Brian"
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "9753",
+        "picked_by": "",
+        "pick_no": 94,
+        "metadata": {
+            "years_exp": "1",
+            "team": "SEA",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "9753",
+            "number": "26",
+            "news_updated": "1704848104443",
+            "last_name": "Charbonnet",
+            "injury_status": "",
+            "first_name": "Zach"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "9754",
+        "picked_by": "",
+        "pick_no": 95,
+        "metadata": {
+            "years_exp": "1",
+            "team": "LAC",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "9754",
+            "number": "1",
+            "news_updated": "1706819113011",
+            "last_name": "Johnston",
+            "injury_status": "",
+            "first_name": "Quentin"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "1264",
+        "picked_by": "",
+        "pick_no": 96,
+        "metadata": {
+            "years_exp": "12",
+            "team": "BAL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "K",
+            "player_id": "1264",
+            "number": "9",
+            "news_updated": "1705440330585",
+            "last_name": "Tucker",
+            "injury_status": "",
+            "first_name": "Justin"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "4066",
+        "picked_by": "738962794141077504",
+        "pick_no": 97,
+        "metadata": {
+            "years_exp": "7",
+            "team": "JAX",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "4066",
+            "number": "17",
+            "news_updated": "1704699030696",
+            "last_name": "Engram",
+            "injury_status": "",
+            "first_name": "Evan"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "4149",
+        "picked_by": "",
+        "pick_no": 98,
+        "metadata": {
+            "years_exp": "7",
+            "team": "NO",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4149",
+            "number": "21",
+            "news_updated": "1704676827893",
+            "last_name": "Williams",
+            "injury_status": "",
+            "first_name": "Jamaal"
+        },
+        "is_keeper": null,
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "3199",
+        "picked_by": "",
+        "pick_no": 99,
+        "metadata": {
+            "years_exp": "8",
+            "team": "NO",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "3199",
+            "number": "13",
+            "news_updated": "1709858446221",
+            "last_name": "Thomas",
+            "injury_status": "",
+            "first_name": "Michael"
+        },
+        "is_keeper": null,
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 10,
+        "roster_id": null,
+        "player_id": "96",
         "picked_by": "",
         "pick_no": 100,
+        "metadata": {
+            "years_exp": "19",
+            "team": "NYJ",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "96",
+            "number": "8",
+            "news_updated": "1709909750582",
+            "last_name": "Rodgers",
+            "injury_status": "",
+            "first_name": "Aaron"
+        },
+        "is_keeper": null,
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "4033",
+        "picked_by": "",
+        "pick_no": 101,
         "metadata": {
             "years_exp": "7",
             "team": "CLE",
@@ -2297,175 +2320,37 @@
         },
         "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 11,
         "roster_id": null,
-        "player_id": "9753",
-        "picked_by": "",
-        "pick_no": 101,
-        "metadata": {
-            "years_exp": "1",
-            "team": "SEA",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "9753",
-            "number": "26",
-            "news_updated": "1704848104443",
-            "last_name": "Charbonnet",
-            "injury_status": "",
-            "first_name": "Zach"
-        },
-        "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "7600",
+        "player_id": "2197",
         "picked_by": "",
         "pick_no": 102,
         "metadata": {
-            "years_exp": "3",
-            "team": "PIT",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "7600",
-            "number": "88",
-            "news_updated": "1705374002186",
-            "last_name": "Freiermuth",
-            "injury_status": "",
-            "first_name": "Pat"
-        },
-        "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "3294",
-        "picked_by": "",
-        "pick_no": 103,
-        "metadata": {
-            "years_exp": "8",
+            "years_exp": "10",
             "team": "DAL",
             "status": "Active",
             "sport": "nfl",
-            "position": "QB",
-            "player_id": "3294",
-            "number": "4",
-            "news_updated": "1709600122077",
-            "last_name": "Prescott",
-            "injury_status": "",
-            "first_name": "Dak"
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "9754",
-        "picked_by": "",
-        "pick_no": 104,
-        "metadata": {
-            "years_exp": "1",
-            "team": "LAC",
-            "status": "Active",
-            "sport": "nfl",
             "position": "WR",
-            "player_id": "9754",
-            "number": "1",
-            "news_updated": "1706819113011",
-            "last_name": "Johnston",
+            "player_id": "2197",
+            "number": "3",
+            "news_updated": "1705942524067",
+            "last_name": "Cooks",
             "injury_status": "",
-            "first_name": "Quentin"
+            "first_name": "Brandin"
         },
         "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "6768",
-        "picked_by": "738962794141077504",
-        "pick_no": 105,
-        "metadata": {
-            "years_exp": "4",
-            "team": "MIA",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "6768",
-            "number": "1",
-            "news_updated": "1709230241019",
-            "last_name": "Tagovailoa",
-            "injury_status": "",
-            "first_name": "Tua"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "8154",
-        "picked_by": "",
-        "pick_no": 106,
-        "metadata": {
-            "years_exp": "2",
-            "team": "WAS",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8154",
-            "number": "8",
-            "news_updated": "1704683428246",
-            "last_name": "Robinson",
-            "injury_status": "",
-            "first_name": "Brian"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 11,
-        "roster_id": null,
-        "player_id": "96",
-        "picked_by": "",
-        "pick_no": 107,
-        "metadata": {
-            "years_exp": "19",
-            "team": "NYJ",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "96",
-            "number": "8",
-            "news_updated": "1709909750582",
-            "last_name": "Rodgers",
-            "injury_status": "",
-            "first_name": "Aaron"
-        },
-        "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 11,
         "roster_id": null,
         "player_id": "9997",
         "picked_by": "",
-        "pick_no": 108,
+        "pick_no": 103,
         "metadata": {
             "years_exp": "1",
             "team": "BAL",
@@ -2480,8 +2365,123 @@
             "first_name": "Zay"
         },
         "is_keeper": null,
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "6768",
+        "picked_by": "738962794141077504",
+        "pick_no": 104,
+        "metadata": {
+            "years_exp": "4",
+            "team": "MIA",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "6768",
+            "number": "1",
+            "news_updated": "1709230241019",
+            "last_name": "Tagovailoa",
+            "injury_status": "",
+            "first_name": "Tua"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "4147",
+        "picked_by": "",
+        "pick_no": 105,
+        "metadata": {
+            "years_exp": "7",
+            "team": "DEN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "4147",
+            "number": "25",
+            "news_updated": "1704912029104",
+            "last_name": "Perine",
+            "injury_status": "",
+            "first_name": "Samaje"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "7839",
+        "picked_by": "",
+        "pick_no": 106,
+        "metadata": {
+            "years_exp": "3",
+            "team": "CIN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "K",
+            "player_id": "7839",
+            "number": "2",
+            "news_updated": "1704732334982",
+            "last_name": "McPherson",
+            "injury_status": "",
+            "first_name": "Evan"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "9229",
+        "picked_by": "",
+        "pick_no": 107,
+        "metadata": {
+            "years_exp": "1",
+            "team": "IND",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "9229",
+            "number": "5",
+            "news_updated": "1707859810805",
+            "last_name": "Richardson",
+            "injury_status": "",
+            "first_name": "Anthony"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 11,
+        "roster_id": null,
+        "player_id": "10236",
+        "picked_by": "",
+        "pick_no": 108,
+        "metadata": {
+            "years_exp": "1",
+            "team": "BUF",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "10236",
+            "number": "86",
+            "news_updated": "1705967150635",
+            "last_name": "Kincaid",
+            "injury_status": "",
+            "first_name": "Dalton"
+        },
+        "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 11,
@@ -2504,129 +2504,37 @@
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 11,
         "roster_id": null,
-        "player_id": "4985",
+        "player_id": "5045",
         "picked_by": "",
         "pick_no": 110,
         "metadata": {
             "years_exp": "6",
-            "team": "PHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "4985",
-            "number": "23",
-            "news_updated": "1705634105518",
-            "last_name": "Penny",
-            "injury_status": "",
-            "first_name": "Rashaad"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "7839",
-        "picked_by": "",
-        "pick_no": 111,
-        "metadata": {
-            "years_exp": "3",
-            "team": "CIN",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "K",
-            "player_id": "7839",
-            "number": "2",
-            "news_updated": "1704732334982",
-            "last_name": "McPherson",
-            "injury_status": "",
-            "first_name": "Evan"
-        },
-        "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "3199",
-        "picked_by": "",
-        "pick_no": 112,
-        "metadata": {
-            "years_exp": "8",
-            "team": "NO",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "3199",
-            "number": "13",
-            "news_updated": "1709858446221",
-            "last_name": "Thomas",
-            "injury_status": "",
-            "first_name": "Michael"
-        },
-        "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "9229",
-        "picked_by": "",
-        "pick_no": 113,
-        "metadata": {
-            "years_exp": "1",
-            "team": "IND",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "QB",
-            "player_id": "9229",
-            "number": "5",
-            "news_updated": "1707859810805",
-            "last_name": "Richardson",
-            "injury_status": "",
-            "first_name": "Anthony"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "2078",
-        "picked_by": "",
-        "pick_no": 114,
-        "metadata": {
-            "years_exp": "10",
-            "team": "BAL",
+            "team": "DEN",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "2078",
-            "number": "3",
-            "news_updated": "1709250641694",
-            "last_name": "Beckham",
+            "player_id": "5045",
+            "number": "14",
+            "news_updated": "1704911128947",
+            "last_name": "Sutton",
             "injury_status": "",
-            "first_name": "Odell"
+            "first_name": "Courtland"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 12,
         "roster_id": null,
         "player_id": "1166",
         "picked_by": "",
-        "pick_no": 115,
+        "pick_no": 111,
         "metadata": {
             "years_exp": "12",
             "team": "ATL",
@@ -2641,176 +2549,38 @@
             "first_name": "Kirk"
         },
         "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 12,
         "roster_id": null,
-        "player_id": "5001",
-        "picked_by": "738962794141077504",
-        "pick_no": 116,
-        "metadata": {
-            "years_exp": "6",
-            "team": "HOU",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "5001",
-            "number": "86",
-            "news_updated": "1709666431256",
-            "last_name": "Schultz",
-            "injury_status": "",
-            "first_name": "Dalton"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "10236",
+        "player_id": "2078",
         "picked_by": "",
-        "pick_no": 117,
+        "pick_no": 112,
         "metadata": {
-            "years_exp": "1",
-            "team": "BUF",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "10236",
-            "number": "86",
-            "news_updated": "1705967150635",
-            "last_name": "Kincaid",
-            "injury_status": "",
-            "first_name": "Dalton"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "4147",
-        "picked_by": "",
-        "pick_no": 118,
-        "metadata": {
-            "years_exp": "7",
-            "team": "DEN",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "4147",
-            "number": "25",
-            "news_updated": "1704912029104",
-            "last_name": "Perine",
-            "injury_status": "",
-            "first_name": "Samaje"
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "4040",
-        "picked_by": "",
-        "pick_no": 119,
-        "metadata": {
-            "years_exp": "7",
-            "team": "NE",
-            "status": "Inactive",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "4040",
-            "number": "7",
-            "news_updated": "1703981102253",
-            "last_name": "Smith-Schuster",
-            "injury_status": "",
-            "first_name": "JuJu"
-        },
-        "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 12,
-        "roster_id": null,
-        "player_id": "7561",
-        "picked_by": "",
-        "pick_no": 120,
-        "metadata": {
-            "years_exp": "3",
-            "team": "SF",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "7561",
-            "number": "25",
-            "news_updated": "1706729159160",
-            "last_name": "Mitchell",
-            "injury_status": "",
-            "first_name": "Elijah"
-        },
-        "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "8135",
-        "picked_by": "",
-        "pick_no": 121,
-        "metadata": {
-            "years_exp": "2",
-            "team": "TEN",
+            "years_exp": "10",
+            "team": "BAL",
             "status": "Active",
             "sport": "nfl",
             "position": "WR",
-            "player_id": "8135",
-            "number": "16",
-            "news_updated": "1704772240843",
-            "last_name": "Burks",
+            "player_id": "2078",
+            "number": "3",
+            "news_updated": "1709250641694",
+            "last_name": "Beckham",
             "injury_status": "",
-            "first_name": "Treylon"
+            "first_name": "Odell"
         },
         "is_keeper": null,
-        "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "3164",
-        "picked_by": "",
-        "pick_no": 122,
-        "metadata": {
-            "years_exp": "8",
-            "team": "NE",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "3164",
-            "number": "15",
-            "news_updated": "1704676526113",
-            "last_name": "Elliott",
-            "injury_status": "",
-            "first_name": "Ezekiel"
-        },
-        "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
+        "round": 12,
         "roster_id": null,
         "player_id": "5890",
         "picked_by": "",
-        "pick_no": 123,
+        "pick_no": 113,
         "metadata": {
             "years_exp": "5",
             "team": "BUF",
@@ -2825,15 +2595,84 @@
             "first_name": "Damien"
         },
         "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 13,
+        "round": 12,
+        "roster_id": null,
+        "player_id": "8135",
+        "picked_by": "",
+        "pick_no": 114,
+        "metadata": {
+            "years_exp": "2",
+            "team": "TEN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "8135",
+            "number": "16",
+            "news_updated": "1704772240843",
+            "last_name": "Burks",
+            "injury_status": "",
+            "first_name": "Treylon"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
+        "roster_id": null,
+        "player_id": "4040",
+        "picked_by": "",
+        "pick_no": 115,
+        "metadata": {
+            "years_exp": "7",
+            "team": "NE",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "4040",
+            "number": "7",
+            "news_updated": "1703981102253",
+            "last_name": "Smith-Schuster",
+            "injury_status": "",
+            "first_name": "JuJu"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
+        "roster_id": null,
+        "player_id": "7561",
+        "picked_by": "",
+        "pick_no": 116,
+        "metadata": {
+            "years_exp": "3",
+            "team": "SF",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "7561",
+            "number": "25",
+            "news_updated": "1706729159160",
+            "last_name": "Mitchell",
+            "injury_status": "",
+            "first_name": "Elijah"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
         "roster_id": null,
         "player_id": "4227",
-        "picked_by": "",
-        "pick_no": 124,
+        "picked_by": "738962794141077504",
+        "pick_no": 117,
         "metadata": {
             "years_exp": "7",
             "team": "KC",
@@ -2849,14 +2688,83 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
+        "roster_id": null,
+        "player_id": "3164",
+        "picked_by": "",
+        "pick_no": 118,
+        "metadata": {
+            "years_exp": "8",
+            "team": "NE",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "3164",
+            "number": "15",
+            "news_updated": "1704676526113",
+            "last_name": "Elliott",
+            "injury_status": "",
+            "first_name": "Ezekiel"
+        },
+        "is_keeper": null,
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
+        "roster_id": null,
+        "player_id": "5001",
+        "picked_by": "",
+        "pick_no": 119,
+        "metadata": {
+            "years_exp": "6",
+            "team": "HOU",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "5001",
+            "number": "86",
+            "news_updated": "1709666431256",
+            "last_name": "Schultz",
+            "injury_status": "",
+            "first_name": "Dalton"
+        },
+        "is_keeper": null,
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 12,
+        "roster_id": null,
+        "player_id": "9226",
+        "picked_by": "",
+        "pick_no": 120,
+        "metadata": {
+            "years_exp": "1",
+            "team": "MIA",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "9226",
+            "number": "28",
+            "news_updated": "1705209337495",
+            "last_name": "Achane",
+            "injury_status": "",
+            "first_name": "De'Von"
+        },
+        "is_keeper": null,
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 13,
         "roster_id": null,
         "player_id": "5095",
-        "picked_by": "738962794141077504",
-        "pick_no": 125,
+        "picked_by": "",
+        "pick_no": 121,
         "metadata": {
             "years_exp": "6",
             "team": "LV",
@@ -2871,107 +2779,15 @@
             "first_name": "Daniel"
         },
         "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "6826",
-        "picked_by": "",
-        "pick_no": 126,
-        "metadata": {
-            "years_exp": "4",
-            "team": "CHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "TE",
-            "player_id": "6826",
-            "number": "85",
-            "news_updated": "1707434124232",
-            "last_name": "Kmet",
-            "injury_status": "",
-            "first_name": "Cole"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "7042",
-        "picked_by": "",
-        "pick_no": 127,
-        "metadata": {
-            "years_exp": "4",
-            "team": "BUF",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "K",
-            "player_id": "7042",
-            "number": "2",
-            "news_updated": "1708214442222",
-            "last_name": "Bass",
-            "injury_status": "",
-            "first_name": "Tyler"
-        },
-        "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "2749",
-        "picked_by": "",
-        "pick_no": 128,
-        "metadata": {
-            "years_exp": "9",
-            "team": "MIA",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "2749",
-            "number": "31",
-            "news_updated": "1705339256838",
-            "last_name": "Mostert",
-            "injury_status": "",
-            "first_name": "Raheem"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 13,
-        "roster_id": null,
-        "player_id": "5045",
-        "picked_by": "",
-        "pick_no": 129,
-        "metadata": {
-            "years_exp": "6",
-            "team": "DEN",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "5045",
-            "number": "14",
-            "news_updated": "1704911128947",
-            "last_name": "Sutton",
-            "injury_status": "",
-            "first_name": "Courtland"
-        },
-        "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 1,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 13,
         "roster_id": null,
         "player_id": "1373",
         "picked_by": "",
-        "pick_no": 130,
+        "pick_no": 122,
         "metadata": {
             "years_exp": "11",
             "team": "SEA",
@@ -2986,153 +2802,38 @@
             "first_name": "Geno"
         },
         "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 14,
+        "round": 13,
         "roster_id": null,
-        "player_id": "8210",
+        "player_id": "6826",
         "picked_by": "",
-        "pick_no": 131,
+        "pick_no": 123,
         "metadata": {
-            "years_exp": "2",
-            "team": "TEN",
+            "years_exp": "4",
+            "team": "CHI",
             "status": "Active",
             "sport": "nfl",
             "position": "TE",
-            "player_id": "8210",
+            "player_id": "6826",
             "number": "85",
-            "news_updated": "1704771341030",
-            "last_name": "Okonkwo",
+            "news_updated": "1707434124232",
+            "last_name": "Kmet",
             "injury_status": "",
-            "first_name": "Chigoziem"
+            "first_name": "Cole"
         },
         "is_keeper": null,
-        "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
-        "round": 14,
-        "roster_id": null,
-        "player_id": "4666",
-        "picked_by": "",
-        "pick_no": 132,
-        "metadata": {
-            "years_exp": "7",
-            "team": "ATL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "K",
-            "player_id": "4666",
-            "number": "6",
-            "news_updated": "1705510860148",
-            "last_name": "Koo",
-            "injury_status": "",
-            "first_name": "Younghoe"
-        },
-        "is_keeper": null,
-        "draft_slot": 9,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 14,
-        "roster_id": null,
-        "player_id": "8132",
-        "picked_by": "",
-        "pick_no": 133,
-        "metadata": {
-            "years_exp": "2",
-            "team": "ATL",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8132",
-            "number": "25",
-            "news_updated": "1705509959943",
-            "last_name": "Allgeier",
-            "injury_status": "",
-            "first_name": "Tyler"
-        },
-        "is_keeper": null,
-        "draft_slot": 8,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 14,
-        "roster_id": null,
-        "player_id": "8228",
-        "picked_by": "",
-        "pick_no": 134,
-        "metadata": {
-            "years_exp": "2",
-            "team": "PIT",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "RB",
-            "player_id": "8228",
-            "number": "30",
-            "news_updated": "1705372802284",
-            "last_name": "Warren",
-            "injury_status": "",
-            "first_name": "Jaylen"
-        },
-        "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 14,
-        "roster_id": null,
-        "player_id": "4195",
-        "picked_by": "",
-        "pick_no": 135,
-        "metadata": {
-            "years_exp": "7",
-            "team": "PHI",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "K",
-            "player_id": "4195",
-            "number": "4",
-            "news_updated": "1704755437903",
-            "last_name": "Elliott",
-            "injury_status": "",
-            "first_name": "Jake"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 14,
-        "roster_id": null,
-        "player_id": "7596",
-        "picked_by": "738962794141077504",
-        "pick_no": 136,
-        "metadata": {
-            "years_exp": "3",
-            "team": "CLE",
-            "status": "Active",
-            "sport": "nfl",
-            "position": "WR",
-            "player_id": "7596",
-            "number": "8",
-            "news_updated": "1709230541525",
-            "last_name": "Moore",
-            "injury_status": "",
-            "first_name": "Elijah"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 14,
+        "round": 13,
         "roster_id": null,
         "player_id": "5185",
-        "picked_by": "",
-        "pick_no": 137,
+        "picked_by": "738962794141077504",
+        "pick_no": 124,
         "metadata": {
             "years_exp": "6",
             "team": "NYJ",
@@ -3148,14 +2849,221 @@
         },
         "is_keeper": null,
         "draft_slot": 4,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "7596",
+        "picked_by": "",
+        "pick_no": 125,
+        "metadata": {
+            "years_exp": "3",
+            "team": "CLE",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "7596",
+            "number": "8",
+            "news_updated": "1709230541525",
+            "last_name": "Moore",
+            "injury_status": "",
+            "first_name": "Elijah"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "1689",
+        "picked_by": "",
+        "pick_no": 126,
+        "metadata": {
+            "years_exp": "11",
+            "team": "CAR",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "1689",
+            "number": "19",
+            "news_updated": "1704758738423",
+            "last_name": "Thielen",
+            "injury_status": "",
+            "first_name": "Adam"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "2749",
+        "picked_by": "",
+        "pick_no": 127,
+        "metadata": {
+            "years_exp": "9",
+            "team": "MIA",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "2749",
+            "number": "31",
+            "news_updated": "1705339256838",
+            "last_name": "Mostert",
+            "injury_status": "",
+            "first_name": "Raheem"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "7042",
+        "picked_by": "",
+        "pick_no": 128,
+        "metadata": {
+            "years_exp": "4",
+            "team": "BUF",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "K",
+            "player_id": "7042",
+            "number": "2",
+            "news_updated": "1708214442222",
+            "last_name": "Bass",
+            "injury_status": "",
+            "first_name": "Tyler"
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "4666",
+        "picked_by": "",
+        "pick_no": 129,
+        "metadata": {
+            "years_exp": "7",
+            "team": "ATL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "K",
+            "player_id": "4666",
+            "number": "6",
+            "news_updated": "1705510860148",
+            "last_name": "Koo",
+            "injury_status": "",
+            "first_name": "Younghoe"
+        },
+        "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 13,
+        "roster_id": null,
+        "player_id": "8210",
+        "picked_by": "",
+        "pick_no": 130,
+        "metadata": {
+            "years_exp": "2",
+            "team": "TEN",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "TE",
+            "player_id": "8210",
+            "number": "85",
+            "news_updated": "1704771341030",
+            "last_name": "Okonkwo",
+            "injury_status": "",
+            "first_name": "Chigoziem"
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "4195",
+        "picked_by": "",
+        "pick_no": 131,
+        "metadata": {
+            "years_exp": "7",
+            "team": "PHI",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "K",
+            "player_id": "4195",
+            "number": "4",
+            "news_updated": "1704755437903",
+            "last_name": "Elliott",
+            "injury_status": "",
+            "first_name": "Jake"
+        },
+        "is_keeper": null,
+        "draft_slot": 10,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "8168",
+        "picked_by": "",
+        "pick_no": 132,
+        "metadata": {
+            "years_exp": "2",
+            "team": "KC",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "WR",
+            "player_id": "8168",
+            "number": "24",
+            "news_updated": "1707356454268",
+            "last_name": "Moore",
+            "injury_status": "",
+            "first_name": "Skyy"
+        },
+        "is_keeper": null,
+        "draft_slot": 9,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "5870",
+        "picked_by": "",
+        "pick_no": 133,
+        "metadata": {
+            "years_exp": "5",
+            "team": "NYG",
+            "status": "Inactive",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "5870",
+            "number": "8",
+            "news_updated": "1709098824989",
+            "last_name": "Jones",
+            "injury_status": "",
+            "first_name": "Daniel"
+        },
+        "is_keeper": null,
+        "draft_slot": 8,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 14,
         "roster_id": null,
         "player_id": "5119",
         "picked_by": "",
-        "pick_no": 138,
+        "pick_no": 134,
         "metadata": {
             "years_exp": "6",
             "team": "MIA",
@@ -3170,15 +3078,84 @@
             "first_name": "Jason"
         },
         "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "2161",
+        "picked_by": "",
+        "pick_no": 135,
+        "metadata": {
+            "years_exp": "10",
+            "team": "KC",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "2161",
+            "number": "1",
+            "news_updated": "1707690052043",
+            "last_name": "McKinnon",
+            "injury_status": "",
+            "first_name": "Jerick"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "3163",
+        "picked_by": "",
+        "pick_no": 136,
+        "metadata": {
+            "years_exp": "8",
+            "team": "DET",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "QB",
+            "player_id": "3163",
+            "number": "16",
+            "news_updated": "1706538641788",
+            "last_name": "Goff",
+            "injury_status": "",
+            "first_name": "Jared"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "8132",
+        "picked_by": "738962794141077504",
+        "pick_no": 137,
+        "metadata": {
+            "years_exp": "2",
+            "team": "ATL",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "8132",
+            "number": "25",
+            "news_updated": "1705509959943",
+            "last_name": "Allgeier",
+            "injury_status": "",
+            "first_name": "Tyler"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 14,
         "roster_id": null,
         "player_id": "1433",
         "picked_by": "",
-        "pick_no": 139,
+        "pick_no": 138,
         "metadata": {
             "years_exp": "11",
             "team": "WAS",
@@ -3193,15 +3170,15 @@
             "first_name": "Brandon"
         },
         "is_keeper": null,
-        "draft_slot": 2,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 14,
         "roster_id": null,
         "player_id": "2747",
         "picked_by": "",
-        "pick_no": 140,
+        "pick_no": 139,
         "metadata": {
             "years_exp": "9",
             "team": "SEA",
@@ -3216,31 +3193,54 @@
             "first_name": "Jason"
         },
         "is_keeper": null,
+        "draft_slot": 2,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 14,
+        "roster_id": null,
+        "player_id": "8228",
+        "picked_by": "",
+        "pick_no": 140,
+        "metadata": {
+            "years_exp": "2",
+            "team": "PIT",
+            "status": "Active",
+            "sport": "nfl",
+            "position": "RB",
+            "player_id": "8228",
+            "number": "30",
+            "news_updated": "1705372802284",
+            "last_name": "Warren",
+            "injury_status": "",
+            "first_name": "Jaylen"
+        },
+        "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
         "roster_id": null,
-        "player_id": "NO",
+        "player_id": "MIA",
         "picked_by": "",
         "pick_no": 141,
         "metadata": {
             "years_exp": "",
-            "team": "NO",
+            "team": "MIA",
             "status": "",
             "sport": "nfl",
             "position": "DEF",
-            "player_id": "NO",
+            "player_id": "MIA",
             "number": "",
             "news_updated": "",
-            "last_name": "Saints",
+            "last_name": "Dolphins",
             "injury_status": "",
-            "first_name": "New Orleans"
+            "first_name": "Miami"
         },
         "is_keeper": null,
         "draft_slot": 1,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
@@ -3263,106 +3263,14 @@
         },
         "is_keeper": null,
         "draft_slot": 2,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 15,
-        "roster_id": null,
-        "player_id": "TEN",
-        "picked_by": "",
-        "pick_no": 143,
-        "metadata": {
-            "years_exp": "",
-            "team": "TEN",
-            "status": "",
-            "sport": "nfl",
-            "position": "DEF",
-            "player_id": "TEN",
-            "number": "",
-            "news_updated": "",
-            "last_name": "Titans",
-            "injury_status": "",
-            "first_name": "Tennessee"
-        },
-        "is_keeper": null,
-        "draft_slot": 3,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 15,
-        "roster_id": null,
-        "player_id": "MIN",
-        "picked_by": "",
-        "pick_no": 144,
-        "metadata": {
-            "years_exp": "",
-            "team": "MIN",
-            "status": "",
-            "sport": "nfl",
-            "position": "DEF",
-            "player_id": "MIN",
-            "number": "",
-            "news_updated": "",
-            "last_name": "Vikings",
-            "injury_status": "",
-            "first_name": "Minnesota"
-        },
-        "is_keeper": null,
-        "draft_slot": 4,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 15,
-        "roster_id": null,
-        "player_id": "TB",
-        "picked_by": "738962794141077504",
-        "pick_no": 145,
-        "metadata": {
-            "years_exp": "",
-            "team": "TB",
-            "status": "",
-            "sport": "nfl",
-            "position": "DEF",
-            "player_id": "TB",
-            "number": "",
-            "news_updated": "",
-            "last_name": "Buccaneers",
-            "injury_status": "",
-            "first_name": "Tampa Bay"
-        },
-        "is_keeper": null,
-        "draft_slot": 5,
-        "draft_id": "1073154350823895040"
-    },
-    {
-        "round": 15,
-        "roster_id": null,
-        "player_id": "NE",
-        "picked_by": "",
-        "pick_no": 146,
-        "metadata": {
-            "years_exp": "",
-            "team": "NE",
-            "status": "",
-            "sport": "nfl",
-            "position": "DEF",
-            "player_id": "NE",
-            "number": "",
-            "news_updated": "",
-            "last_name": "Patriots",
-            "injury_status": "",
-            "first_name": "New England"
-        },
-        "is_keeper": null,
-        "draft_slot": 6,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
         "roster_id": null,
         "player_id": "KC",
         "picked_by": "",
-        "pick_no": 147,
+        "pick_no": 143,
         "metadata": {
             "years_exp": "",
             "team": "KC",
@@ -3377,76 +3285,168 @@
             "first_name": "Kansas City"
         },
         "is_keeper": null,
-        "draft_slot": 7,
-        "draft_id": "1073154350823895040"
+        "draft_slot": 3,
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
         "roster_id": null,
-        "player_id": "HOU",
+        "player_id": "WAS",
+        "picked_by": "738962794141077504",
+        "pick_no": 144,
+        "metadata": {
+            "years_exp": "",
+            "team": "WAS",
+            "status": "",
+            "sport": "nfl",
+            "position": "DEF",
+            "player_id": "WAS",
+            "number": "",
+            "news_updated": "",
+            "last_name": "Commanders",
+            "injury_status": "",
+            "first_name": "Washington"
+        },
+        "is_keeper": null,
+        "draft_slot": 4,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 15,
+        "roster_id": null,
+        "player_id": "NO",
+        "picked_by": "",
+        "pick_no": 145,
+        "metadata": {
+            "years_exp": "",
+            "team": "NO",
+            "status": "",
+            "sport": "nfl",
+            "position": "DEF",
+            "player_id": "NO",
+            "number": "",
+            "news_updated": "",
+            "last_name": "Saints",
+            "injury_status": "",
+            "first_name": "New Orleans"
+        },
+        "is_keeper": null,
+        "draft_slot": 5,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 15,
+        "roster_id": null,
+        "player_id": "SF",
+        "picked_by": "",
+        "pick_no": 146,
+        "metadata": {
+            "years_exp": "",
+            "team": "SF",
+            "status": "",
+            "sport": "nfl",
+            "position": "DEF",
+            "player_id": "SF",
+            "number": "",
+            "news_updated": "",
+            "last_name": "49ers",
+            "injury_status": "",
+            "first_name": "San Francisco"
+        },
+        "is_keeper": null,
+        "draft_slot": 6,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 15,
+        "roster_id": null,
+        "player_id": "GB",
+        "picked_by": "",
+        "pick_no": 147,
+        "metadata": {
+            "years_exp": "",
+            "team": "GB",
+            "status": "",
+            "sport": "nfl",
+            "position": "DEF",
+            "player_id": "GB",
+            "number": "",
+            "news_updated": "",
+            "last_name": "Packers",
+            "injury_status": "",
+            "first_name": "Green Bay"
+        },
+        "is_keeper": null,
+        "draft_slot": 7,
+        "draft_id": "1073181409734414336"
+    },
+    {
+        "round": 15,
+        "roster_id": null,
+        "player_id": "NE",
         "picked_by": "",
         "pick_no": 148,
         "metadata": {
             "years_exp": "",
-            "team": "HOU",
+            "team": "NE",
             "status": "",
             "sport": "nfl",
             "position": "DEF",
-            "player_id": "HOU",
+            "player_id": "NE",
             "number": "",
             "news_updated": "",
-            "last_name": "Texans",
+            "last_name": "Patriots",
             "injury_status": "",
-            "first_name": "Houston"
+            "first_name": "New England"
         },
         "is_keeper": null,
         "draft_slot": 8,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
         "roster_id": null,
-        "player_id": "MIA",
+        "player_id": "NYJ",
         "picked_by": "",
         "pick_no": 149,
         "metadata": {
             "years_exp": "",
-            "team": "MIA",
+            "team": "NYJ",
             "status": "",
             "sport": "nfl",
             "position": "DEF",
-            "player_id": "MIA",
+            "player_id": "NYJ",
             "number": "",
             "news_updated": "",
-            "last_name": "Dolphins",
+            "last_name": "Jets",
             "injury_status": "",
-            "first_name": "Miami"
+            "first_name": "New York"
         },
         "is_keeper": null,
         "draft_slot": 9,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     },
     {
         "round": 15,
         "roster_id": null,
-        "player_id": "LV",
+        "player_id": "JAX",
         "picked_by": "",
         "pick_no": 150,
         "metadata": {
             "years_exp": "",
-            "team": "LV",
+            "team": "JAX",
             "status": "",
             "sport": "nfl",
             "position": "DEF",
-            "player_id": "LV",
+            "player_id": "JAX",
             "number": "",
             "news_updated": "",
-            "last_name": "Raiders",
+            "last_name": "Jaguars",
             "injury_status": "",
-            "first_name": "Las Vegas"
+            "first_name": "Jacksonville"
         },
         "is_keeper": null,
         "draft_slot": 10,
-        "draft_id": "1073154350823895040"
+        "draft_id": "1073181409734414336"
     }
 ]

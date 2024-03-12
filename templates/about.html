@@ -2,15 +2,42 @@
 {% block title %}Sleeper Tiers{% endblock %}
 {% block content %}
 <section>
-    <div class="container mt-5 text-center px-5">
-        <h1 class="header mb-3 text-info"> About</h1>
-        <h4 class="header mb-3"> This was a fun little project as I was learning more about Flask and Bootstrap/CSS
-            to deploy a web app with Python as the backend.</h4>
-        <h4 class="mt-5">I'm used to compiling tier sheets or "ranking sheets" for my fantasy football drafts and manually following
-        along and marking players off as they are picked. This gives me a tool that automates this thanks to Sleeper's free API. </h4>
+    <div class="px-5 py-3 mt-5 text-center bg-body-tertiary">
+        <div class="container py-4">
+            <h1 class="text-body-emphasis mb-3 text-info"> About</h1>
+            <p class="col-lg-8 mx-auto lead"> This was a fun little project as I was learning more about Flask and Bootstrap/CSS
+                to deploy a web app with Python as the backend.</p>
+            <p class="col-lg-8 mx-auto lead">I'm used to compiling tier sheets or "ranking sheets" for my fantasy football drafts and
+                manually following
+                along and marking players off as they are picked. This gives me a tool that automates this thanks to
+                Sleeper's free API. </p>
 
-        <h5 class="pt-5"> Find out more about Sleeper API <a href="https://sleeper-api-client.readthedocs.io/en/latest/index.html">here.</a></h5>
-        <a href="https://github.com/brownjf2027/SleeperTierSite.git">GitHub</a>
+            <h5 class="text-body-emphasis pt-2 px-5"> Find out more about Sleeper API <a class="text-info"
+                                                                 href="https://sleeper-api-client.readthedocs.io/en/latest/index.html">here</a>.
+            </h5>
+            <h4 class="text-body-emphasis text-info"><a class="text-info" href="https://github.com/brownjf2027/SleeperTierSite.git">GitHub</a></h4>
+        </div>
     </div>
+</section>
+<div class="b-example-divider"></div>
+<section>
+    <div class="px-5 py-3 text-center bg-body-tertiary">
+        <div class="container py-4">
+            <h1 class="text-body-emphasis">Enjoy using it?</h1>
+            <p class="col-lg-8 mx-auto lead">
+                If you'd like to see this tool developed further feel free to reach out via the Contact page and/or
+                buying
+                me a coffee below. Any donations will help cover hosting costs and time for further
+                development. </p>
+            <div class="container pt-3 pb-0">
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                        data-name="bmc-button" data-slug="jfbrown" data-color="#6930c3" data-emoji=""
+                        data-font="Poppins"
+                        data-text="Buy me a coffee" data-outline-color="#fff" data-font-color="#ffffff"
+                        data-coffee-color="#71463d"></script>
+            </div>
+        </div>
+    </div>
+
 </section>
 {% endblock %}
