@@ -2,7 +2,7 @@ import uuid
 from _datetime import datetime
 from requests import get
 import data
-from flask import Flask, render_template, redirect, url_for, send_file, make_response, session, jsonify
+from flask import Flask, render_template, redirect, url_for, send_file, make_response, session, jsonify, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, FileField, TextAreaField, EmailField
 from wtforms.validators import DataRequired, ValidationError
@@ -13,15 +13,83 @@ from pandas import read_csv
 from csv import DictWriter
 from collections import OrderedDict
 from os import environ
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = environ.get('FLASK_KEY')  # Replace with your secret key
 bootstrap = Bootstrap5(app)
 
+
 # # Load the values from .env
 # key = os.environ['KEY']
 # endpoint = os.environ['ENDPOINT']
 # location = os.environ['LOCATION']
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///feedback.db"
+db = SQLAlchemy(model_class=Base)
+# Initialise the app with the extension
+db.init_app(app)
+
+
+class Feedback(db.Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    name: Mapped[str]
+    email: Mapped[str]
+    feedback: Mapped[str]
+
+
+# TODO USER Authentication for saving rankings
+# class User(db.Model):
+#     __tablename__ = 'users'
+#
+#     user_id = db.Column(db.Integer, primary_key=True)
+#     username = db.Column(db.String(100), unique=True, nullable=False)
+#     password_hash = db.Column(db.String(255), nullable=False)  # Store hashed passwords securely
+
+# TODO Potential Addition: Storing Ranking Sheet or Multiple Sheets
+# class RankingSheet(db.Model):
+#     __tablename__ = 'ranking_sheets'
+#
+#     sheet_id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+#     file_name = db.Column(db.String(255), nullable=False)
+#     file_path = db.Column(db.String(255), nullable=False)  # Store file path or reference if stored externally
+#     upload_timestamp = db.Column(db.TIMESTAMP, nullable=False)
+#
+#     user = db.relationship('User', backref=db.backref('ranking_sheets', lazy=True))
+#
+#
+# class NFLPlayer(db.Model):
+#     __tablename__ = 'nfl_players'
+#
+#     player_id = db.Column(db.Integer, primary_key=True)
+#     player_name = db.Column(db.String(100), nullable=False)
+#     team = db.Column(db.String(100), nullable=False)
+#     position = db.Column(db.String(50), nullable=False)
+#     # Add more columns as needed
+#
+#
+# class RankingSheetPlayerRanking(db.Model):
+#     __tablename__ = 'ranking_sheet'
+#
+#     sheet_id = db.Column(db.Integer, db.ForeignKey('ranking_sheets.sheet_id'), primary_key=True)
+#     player_id = db.Column(db.Integer, db.ForeignKey('nfl_players.player_id'), primary_key=True)
+#     ranking = db.Column(db.Integer, nullable=False)
+#
+#     ranking_sheet = db.relationship('RankingSheet', backref=db.backref('player_rankings', lazy=True))
+#     player = db.relationship('NFLPlayer', backref=db.backref('ranking_sheets', lazy=True))
+
+
+with app.app_context():
+    db.create_all()
 
 
 class CSVFileValidator:
@@ -51,6 +119,10 @@ class ContactForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
+def send_contact(name, email, suggestion):
+    pass
+
+
 def get_current_date():
     return {'current_year': datetime.today().strftime('%Y')}
 
@@ -71,6 +143,18 @@ def contact():
         name = contact_form.name.data
         email = contact_form.email.data
         suggestion = contact_form.suggestion.data
+
+        try:
+            # CREATE RECORD
+            new_feedback = Feedback(
+                name=name,
+                email=email,
+                feedback=suggestion
+            )
+            db.session.add(new_feedback)
+            db.session.commit()
+        except Exception as ex:
+            print(ex)
 
         return redirect(url_for("thanks"))
     return render_template('contact.html', form=contact_form)
