@@ -23,12 +23,6 @@ app.config['SECRET_KEY'] = environ.get('FLASK_KEY')  # Replace with your secret 
 bootstrap = Bootstrap5(app)
 
 
-# # Load the values from .env
-# key = os.environ['KEY']
-# endpoint = os.environ['ENDPOINT']
-# location = os.environ['LOCATION']
-
-
 class Base(DeclarativeBase):
     pass
 
@@ -45,6 +39,7 @@ db = SQLAlchemy(app)
 
 # db = SQLAlchemy(model_class=Base)
 # db.init_app(app)
+
 
 class Feedback(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
@@ -93,6 +88,7 @@ class Feedback(db.Model):
 #
 #     ranking_sheet = db.relationship('RankingSheet', backref=db.backref('player_rankings', lazy=True))
 #     player = db.relationship('NFLPlayer', backref=db.backref('ranking_sheets', lazy=True))
+
 db_up = True
 try:
     with app.app_context():
