@@ -84,9 +84,13 @@ padding-top: 5px;
 }
 
 .btn-primary {
-background: #fff;
-border-color: #000;
-color: #000
+background: rgb(255,255,255);
+background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5298494397759104) 100%);
+background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5298494397759104) 100%);
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5298494397759104) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+border: none;
+color: #000;
 }
 
 .btn-primary:active {
@@ -102,6 +106,7 @@ color: #000
 .btn-outline-secondary{
     border-color: #fff;
     color: #fff;
+    font-weight: lighter;
 }
 
 .btn-outline-secondary:hover{
