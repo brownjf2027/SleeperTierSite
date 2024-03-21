@@ -84,8 +84,9 @@ padding-top: 5px;
 }
 
 .btn-primary {
-background: #6930C3;
-border-color: #6930C3;
+background: #fff;
+border-color: #000;
+color: #000
 }
 
 .btn-primary:active {
