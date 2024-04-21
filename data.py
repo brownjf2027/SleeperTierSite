@@ -4,7 +4,9 @@ import json
 
 PLAYERS_URL = "https://api.sleeper.app/v1/players/nfl"
 DRAFT_URL = "https://api.sleeper.app/v1/draft/"
-USER_URL = "GET https://api.sleeper.app/v1/user/"
+USER_URL = "https://api.sleeper.app/v1/user/"
+LEAGUES_BY_USER = "https://api.sleeper.app/v1/user/<user_id>/leagues/nfl/<season>"
+DRAFTS_BY_USER = "https://api.sleeper.app/v1/user/<user_id>/drafts/nfl/<season>"
 TOP_X_PLAYERS = 500
 
 
@@ -83,6 +85,28 @@ def get_csv():
         return players_data
 
 
+def get_leagues(year, user_id):
+    leagues_url = LEAGUES_BY_USER.replace("<user_id>", user_id)
+    leagues_url = leagues_url.replace("<season>", str(year))
+    parameters = {}
+    response = requests.get(leagues_url, params=parameters)
+    response.raise_for_status()
+    data = response.json()
+    print(data)
+    return data
+
+
+def get_drafts(year, user_id):
+    drafts_url = DRAFTS_BY_USER.replace("<user_id>", user_id)
+    drafts_url = drafts_url.replace("<season>", str(year))
+    parameters = {}
+    response = requests.get(drafts_url, params=parameters)
+    response.raise_for_status()
+    data = response.json()
+    print(data)
+    return data
+
+
 def top_players():
     with open("top_players.json", "r") as data_file:
         players_data = json.load(data_file)
@@ -117,3 +141,10 @@ def get_top_players():
 # get_top_players()
 # get_draft("1071375774982234112")
 # get_draft_picks("1052865939722690560")
+
+# try:
+#     user_data = get_user("jfbrown")
+#     drafts = get_drafts("2024", user_data["user_id"])
+#     print(drafts)
+# except requests.RequestException:
+#     print("not found")
