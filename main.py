@@ -183,6 +183,8 @@ def manual():
 
 @app.route("/download_csv", methods=["POST"])
 def download_csv():
+    #refresh players
+    data.update_players()
     # Generate CSV content
     top_players = data.top_players()
 
