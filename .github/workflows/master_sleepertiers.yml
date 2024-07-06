@@ -73,5 +73,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'SleeperTiers'
-          slot-name: 'Production'
+#          slot-name: 'Production'
           startup-command: 'gunicorn -b 0.0.0.0:$PORT main:app'
