@@ -219,3 +219,21 @@ color: #fff;
   background-color: #6930C3;
   border-color: var(--bs-list-group-active-border-color);
 }
+
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding-top: 30px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.main-content {
+    margin-left: 300px;
+    padding: 20px;
+    width: calc(100% - 300px);
+}

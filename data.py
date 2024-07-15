@@ -1,6 +1,7 @@
 import copy
 import requests
 import json
+from datetime import datetime
 
 PLAYERS_URL = "https://api.sleeper.app/v1/players/nfl"
 DRAFT_URL = "https://api.sleeper.app/v1/draft/"
@@ -137,8 +138,11 @@ def get_top_players():
     return top_players
 
 
-# update_players()
-# get_top_players()
+def update_player_data_for_site():
+    print(f"Updating player data at {datetime.now()}")
+    update_players()
+    get_top_players()
+    print(f"Update finished at {datetime.now()}")
 # get_draft("1071375774982234112")
 # get_draft_picks("1052865939722690560")
 

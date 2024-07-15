@@ -1,0 +1,706 @@
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+<!--    sidebar-->
+<div class="sidebar border border-right">
+    <div class="sidebar-header ps-2" data-bs-theme="dark" style="width: 280px">
+        <h2>Draft Picks</h2>
+        <!--        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+    </div>
+    <div class="sidebar-body" style="max-width: 280px; overflow-x: hidden;">
+        <div class="d-flex flex-column align-items-stretch flex-shrink-0" style="width: 280px;">
+            {% set total_picks = draft_picks|length %}
+            {% for pick in draft_picks %}
+            {% set reversed_index = total_picks - loop.index + 1 %}
+            <div class="list-group list-group-flush border-bottom scrollarea" style="max-width: 280px;">
+                {% if pick in my_picks %}
+                <a href="{{ url_for('manual_picked', function='undo', player=pick['player_id']) }}" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
+                    {% else %}
+                    <a href="{{ url_for('manual_picked', function='undo', player=pick['player_id']) }}" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                        {% endif %}
+                        <div class="d-flex w-100 align-items-center justify-content-between" style="width: 100%;">
+                            <strong class="mb-1" style="max-width: 80%;">{{ pick['first_name'] }} {{
+                                pick['last_name'] }} (#{{ reversed_index }}) </strong>
+                            <small style="max-width: 20%;">{{ pick['position'] }}</small>
+                        </div>
+<!--                        <div class="col-10 mb-1 small" style="max-width: 100%;">Pick #{{ pick['pick_no'] }}.</div>-->
+                    </a>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="main-content mb-5">
+    <div class="container pt-3">
+        <div class="row row-cols-1 row-cols-sm-2 text-center">
+            {% if my_team == "" %}
+            {% else %}
+            <div class="card rounded-3 p-0 m-2" style="width: 21rem">
+                <div class="card-header py-1">
+                    <h5 class="card-title">My Team</h5>
+                </div>
+                <div class="card-body-my-picks">
+                    <div class="row pt-2">
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">QB</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_qbs %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">TE</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_tes %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">RB</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_rbs %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">DEF</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_defs %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">WR</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_wrs %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                        <div class="col-2" style="display: flex; justify-content: center; align-items: center;">
+                            <h6 style="margin: 0;">K</h6>
+                        </div>
+                        <div class="stars col-4">
+                            <h6>
+                                {% for player in my_ks %}
+                                {% if player['tier'] == 3 %}
+                                <i class="fa-solid fa-star pt" style="color: #9f7a34;; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] == 2 %}
+                                <i class="fa-solid fa-star pt" style="color: silver; font-size: 12px;"></i>
+                                {% endif %}
+                                {% if player['tier'] == 1 %}
+                                <i class="fa-solid fa-star pt" style="color: gold; font-size: 12px"></i>
+                                {% endif %}
+                                {% if player['tier'] > 3 %}
+                                <i class="fa-regular fa-star pt" style="font-size: 12px"></i>
+                                {% endif %}
+                                {% endfor %}
+                            </h6>
+                        </div>
+                    </div>
+
+                    <!--                    <button class="btn btn-primary mb-2 mt-2" type="button" data-bs-toggle="offcanvas"-->
+                    <!--                            data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">See Picks-->
+                    <!--                    </button>-->
+                </div>
+            </div>
+            {% endif %}
+            <div>
+                <h4>Beta Mode</h4>
+                <p> '+' to mark as your own pick, '-' to mark as drafted by another team. Click a player on the sidebar if they need to be returned to the pool of players.</p>
+                <p> Pro tip: Use the browser's built-in CTRL+F function to quickly find a player by name when needed. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="board_header mt-3">Draft Board</h3>
+        <div class="row">
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">QB</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if qb1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if qb1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ qb1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ qb1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if qb2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if qb2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ qb2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ qb2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if qb3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if qb3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ qb3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ qb3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_qbs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">RB</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if rb1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if rb1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ rb1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ rb1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if rb2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if rb2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ rb2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ rb2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if rb3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if rb3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ rb3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ rb3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <!--                        <h3 class="text-info">RB </h3>-->
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_rbs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">WR</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if wr1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if wr1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ wr1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ wr1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if wr2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if wr2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ wr2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ wr2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if wr3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if wr3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ wr3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ wr3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <!--                        <h3 class="text-info">WR</h3>-->
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_wrs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">TE</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if te1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if te1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ te1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ te1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if te2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if te2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ te2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ te2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if te3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if te3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ te3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ te3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <!--                        <h3 class="text-info">TE</h3>-->
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_tes.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">DEF</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if def1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if def1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ def1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ def1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if def2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if def2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ def2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ def2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if def3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if def3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ def3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ def3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <!--                        <h3 class="text-info">DEF</h3>-->
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_defs.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container-card rounded-3 p-2 m-2">
+                <div class="position-header">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3 class="text-info">K</h3>
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if k1s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: gold; opacity: 10%"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: gold;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if k1s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%">{{ k1s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ k1s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if k2s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: silver; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: silver;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if k2s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ k2s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ k2s }}</h5>
+                            {% endif %}
+
+                        </div>
+                        <div class="col-1 pt-1">
+                            {% if k3s == 0 %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34; opacity: 10%;"></i>
+                            {% else %}
+                            <i class="fa-solid fa-star pt" style="color: #9f7a34;"></i>
+                            {% endif %}
+                        </div>
+                        <div class="col-1">
+                            {% if k3s == 0 %}
+                            <h5 class="text pt-1" style="opacity: 10%;">{{ k3s }}</h5>
+                            {% else %}
+                            <h5 class="text pt-1">{{ k3s }}</h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="table-primary">
+                    <table class="table-sm">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="width: 2rem">Tier</th>
+                            <th scope="col" style="width: 9rem">Name</th>
+                            <th scope="col" style="width: 4rem">Proj</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for key, values in top_ks.items() %}
+                        <tr>
+                            <td>{{ values['tier'] }}</td>
+                            <td>{{ values['full_name'] }}</td>
+                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="jfbrown" data-description="Support me on Buy me a coffee!"
+        data-color="#51b9e9" data-position="Right"
+        data-x_margin="18" data-y_margin="18"></script>
+{% endblock %}
