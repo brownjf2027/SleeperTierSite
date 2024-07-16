@@ -101,6 +101,7 @@ def admin_required(f):
     return decorated_function
 
 
+#  TODO Would need to update authentication to handle both regular and admin users, currently only setup for admin
 # @app.route('/register', methods=['GET', 'POST'])
 # def register():
 #     if request.method == 'POST':
