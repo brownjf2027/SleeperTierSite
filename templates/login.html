@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mt-5 flex-auto p-0">
+    <div class="row justify-content-center mx-auto"> <!-- Center the content horizontally -->
+        <div class="col-md-6"> <!-- Adjust the column width as needed -->
+            <div class="box">
+                <h1>Sign In</h1>
+
+                <form action="{{ url_for('login') }}" method="post">
+                    <input type="text" name="email" placeholder="Email" required="required"/>
+                    <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required="required"
+                    />
+                    <button id="submit" type="submit" class="btn btn-primary btn-block btn-large">
+                        Let me in.
+                    </button>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+            {% endblock %}

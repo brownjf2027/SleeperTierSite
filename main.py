@@ -5,21 +5,28 @@ from io import StringIO
 from os import environ
 
 import sqlalchemy.exc
-from flask import Flask, render_template, redirect, url_for, make_response, jsonify
+from flask import Flask, render_template, redirect, url_for, make_response, jsonify, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
+from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from pandas import read_csv
 from requests import get
+from sqlalchemy import Integer, String, Date, LargeBinary
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import Mapped, mapped_column
 from wtforms import StringField, SubmitField, FileField, TextAreaField, EmailField
 from wtforms.validators import DataRequired, ValidationError
 
+from werkzeug.security import check_password_hash, generate_password_hash
+from functools import wraps
+
 import data
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 import time
+
+SALT_ROUNDS = 16
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = environ.get('FLASK_KEY')  # Replace with your secret key
@@ -46,53 +53,20 @@ db = SQLAlchemy(app)
 # db.init_app(app)
 
 
+class User(UserMixin, db.Model):
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    email: Mapped[str] = mapped_column(String(100), unique=True)
+    password: Mapped[str] = mapped_column(String(500))
+    name: Mapped[str] = mapped_column(String(1000))
+    admin: Mapped[bool]
+
+
 class Feedback(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str]
     email: Mapped[str]
     feedback: Mapped[str]
 
-
-# TODO USER Authentication for saving rankings
-# class User(db.Model):
-#     __tablename__ = 'users'
-#
-#     user_id = db.Column(db.Integer, primary_key=True)
-#     username = db.Column(db.String(100), unique=True, nullable=False)
-#     password_hash = db.Column(db.String(255), nullable=False)  # Store hashed passwords securely
-
-# TODO Potential Addition: Storing Ranking Sheet or Multiple Sheets
-# class RankingSheet(db.Model):
-#     __tablename__ = 'ranking_sheets'
-#
-#     sheet_id = db.Column(db.Integer, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-#     file_name = db.Column(db.String(255), nullable=False)
-#     file_path = db.Column(db.String(255), nullable=False)  # Store file path or reference if stored externally
-#     upload_timestamp = db.Column(db.TIMESTAMP, nullable=False)
-#
-#     user = db.relationship('User', backref=db.backref('ranking_sheets', lazy=True))
-#
-#
-# class NFLPlayer(db.Model):
-#     __tablename__ = 'nfl_players'
-#
-#     player_id = db.Column(db.Integer, primary_key=True)
-#     player_name = db.Column(db.String(100), nullable=False)
-#     team = db.Column(db.String(100), nullable=False)
-#     position = db.Column(db.String(50), nullable=False)
-#     # Add more columns as needed
-#
-#
-# class RankingSheetPlayerRanking(db.Model):
-#     __tablename__ = 'ranking_sheet'
-#
-#     sheet_id = db.Column(db.Integer, db.ForeignKey('ranking_sheets.sheet_id'), primary_key=True)
-#     player_id = db.Column(db.Integer, db.ForeignKey('nfl_players.player_id'), primary_key=True)
-#     ranking = db.Column(db.Integer, nullable=False)
-#
-#     ranking_sheet = db.relationship('RankingSheet', backref=db.backref('player_rankings', lazy=True))
-#     player = db.relationship('NFLPlayer', backref=db.backref('ranking_sheets', lazy=True))
 
 db_up = True
 try:
@@ -101,6 +75,80 @@ try:
 except sqlalchemy.exc.OperationalError:
     print("not available")
     db_up = False
+
+
+# Configure Flask-Login's Login Manager
+login_manager = LoginManager()
+login_manager.init_app(app)
+
+
+# Create a user_loader callback
+@login_manager.user_loader
+def load_user(user_id):
+    return db.get_or_404(User, user_id)
+
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not current_user.is_authenticated:
+            flash('Please log in to access this page.')
+            return redirect(url_for('login', logged_in=current_user.is_authenticated))
+        elif not current_user.is_authenticated:
+            flash('You do not have permission to view this page.')
+            return redirect(url_for('index', logged_in=current_user.is_authenticated))  # or any other appropriate page
+        return f(*args, **kwargs)
+    return decorated_function
+
+
+# @app.route('/register', methods=['GET', 'POST'])
+# def register():
+#     if request.method == 'POST':
+#         name = request.form.get('name')
+#         email = request.form.get('email')
+#         password = request.form.get('password')
+#         admin = request.form.get('admin') == 'True'
+#
+#         if User.query.filter_by(email=email).first():
+#             flash('Email address already exists')
+#             return redirect(url_for('register'))
+#
+#         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+#         new_user = User(name=name, email=email, password=hashed_password, admin=admin)
+#         db.session.add(new_user)
+#         db.session.commit()
+#
+#         login_user(new_user)
+#         return redirect(url_for('/'))
+#
+#     return render_template('register.html')
+
+
+@app.route("/post/<int:post_id>")
+@admin_required
+def show_post(post_id):
+    requested_post = Feedback.query.filter_by(id=post_id).first()
+
+    return render_template("post.html", post=requested_post, logged_in=current_user.is_authenticated)
+
+
+@app.route("/posts")
+@admin_required
+def all_posts():
+    all_posts = Feedback.query.all()
+
+    return render_template("posts.html", posts=all_posts, logged_in=current_user.is_authenticated)
+
+
+@app.route("/delete/<int:post_id>")
+@admin_required
+def delete_post(post_id):
+    requested_post = Feedback.query.filter_by(id=post_id).first()
+    db.session.delete(requested_post)
+    db.session.commit()
+    flash("Deleted!")
+    all_posts = Feedback.query.all()
+    return redirect(url_for('all_posts', posts=all_posts, logged_in=current_user.is_authenticated))
 
 
 class CSVFileValidator:
@@ -130,7 +178,7 @@ class ManualLoginForm(FlaskForm):
 
 class ContactForm(FlaskForm):
     name = StringField('Name')
-    email = EmailField('Email *', validators=[DataRequired()])
+    email = EmailField('Email')
     suggestion = TextAreaField('Suggestion *', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
@@ -193,7 +241,36 @@ current_state = None
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template('index.html', logged_in=current_user.is_authenticated)
+
+
+@app.route('/signin', methods=['GET', 'POST'])
+def login():
+    # check_password_hash(pwhash, password)
+    if request.method == "POST":
+        user_email = request.form.get("email")
+        user_password = request.form.get("password")
+
+        # Querying the user based on the provided email
+        user_check = User.query.filter_by(email=user_email).first()
+
+        if user_check:
+            if check_password_hash(user_check.password, user_password):
+                login_user(user_check)
+                return redirect(url_for("home", user_id=user_check.id, logged_in=current_user.is_authenticated))
+            else:
+                flash("Incorrect password, please try again.")
+                return render_template("login.html", logged_in=current_user.is_authenticated)
+        else:
+            flash("That email does not exist, please try again.")
+            return render_template("login.html", logged_in=current_user.is_authenticated)
+    return render_template("login.html", logged_in=current_user.is_authenticated)
+
+
+@app.route('/logout', methods=["GET"])
+def logout():
+    logout_user()
+    return redirect(url_for('home', logged_in=current_user.is_authenticated))
 
 
 @app.route("/contact", methods=["GET", "POST"])
@@ -216,18 +293,18 @@ def contact():
         except Exception as ex:
             print(ex)
 
-        return redirect(url_for("thanks"))
-    return render_template('contact.html', form=contact_form)
+        return redirect(url_for("thanks", logged_in=current_user.is_authenticated))
+    return render_template('contact.html', form=contact_form, logged_in=current_user.is_authenticated)
 
 
 @app.route("/thanks", methods=["GET"])
 def thanks():
-    return render_template('thanks.html')
+    return render_template('thanks.html', logged_in=current_user.is_authenticated)
 
 
 @app.route("/about", methods=["GET"])
 def about():
-    return render_template('about.html')
+    return render_template('about.html', logged_in=current_user.is_authenticated)
 
 
 @app.route("/draft/manual", methods=['GET'])
@@ -272,10 +349,10 @@ def manual():
 
     draft_status = ""
     if draft_status == "Complete":
-        redirect_url = url_for('draft_complete', draft_id="manual", draft_position="")
+        redirect_url = url_for('draft_complete', draft_id="manual", draft_position="", logged_in=current_user.is_authenticated)
         print("Redirect URL:", redirect_url)
 
-        return redirect(url_for('draft_complete', draft_id="manual", draft_position=""))
+        return redirect(url_for('draft_complete', draft_id="manual", draft_position="", logged_in=current_user.is_authenticated))
 
     picks = []
     picks = list(reversed(picks))
@@ -420,7 +497,7 @@ def manual():
                            def3s=def3s,
                            k1s=k1s,
                            k2s=k2s,
-                           k3s=k3s,
+                           k3s=k3s, logged_in=current_user.is_authenticated,
                            )
 
 
@@ -467,10 +544,10 @@ def manual_picked(function, player):
 
     draft_status = ""
     if draft_status == "Complete":
-        redirect_url = url_for('draft_complete', draft_id="manual", draft_position="")
+        redirect_url = url_for('draft_complete', draft_id="manual", draft_position="", logged_in=current_user.is_authenticated)
         print("Redirect URL:", redirect_url)
 
-        return redirect(url_for('draft_complete', draft_id="manual", draft_position=""))
+        return redirect(url_for('draft_complete', draft_id="manual", draft_position="", logged_in=current_user.is_authenticated))
 
     top_players = data.top_players()
 
@@ -632,7 +709,7 @@ def manual_picked(function, player):
                            k1s=k1s,
                            k2s=k2s,
                            k3s=k3s,
-                           my_picks=list(reversed(my_picks))
+                           my_picks=list(reversed(my_picks)), logged_in=current_user.is_authenticated
                            )
 
 
@@ -705,7 +782,7 @@ def download_csv():
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login():
+def draft_login():
     form = LoginForm()
     if form.validate_on_submit():
         draft_id = form.draft_id.data
@@ -732,13 +809,13 @@ def login():
                 csv_df.to_json(data_file, orient='index', indent=4)
 
             # Redirect to success page
-            return redirect(url_for('success', draft_id=draft_id, draft_position=draft_position))
+            return redirect(url_for('success', draft_id=draft_id, draft_position=draft_position, logged_in=current_user.is_authenticated))
 
         except Exception as e:
             # Handle any errors that occur during the process
             print("An error occurred:", e)
 
-    return render_template("draft_login.html", form=form)
+    return render_template("draft_login.html", form=form, logged_in=current_user.is_authenticated)
 
 
 @app.route("/manual_login", methods=["GET", "POST"])
@@ -761,13 +838,13 @@ def manual_login():
                 csv_df.to_json(data_file, orient='index', indent=4)
 
             # Redirect to success page
-            return redirect(url_for('manual'))
+            return redirect(url_for('manual', logged_in=current_user.is_authenticated))
 
         except Exception as e:
             # Handle any errors that occur during the process
             print("An error occurred:", e)
 
-    return render_template("manual_draft_login.html", form=form)
+    return render_template("manual_draft_login.html", form=form, logged_in=current_user.is_authenticated)
 
 
 @app.route("/check_for_updates/<draft_id>")
@@ -850,10 +927,10 @@ def success(draft_id, draft_position):
 
         draft_status = draft_info['status'].title()
         if draft_status == "Complete":
-            redirect_url = url_for('draft_complete', draft_id=draft_id, draft_position=draft_position)
+            redirect_url = url_for('draft_complete', draft_id=draft_id, draft_position=draft_position, logged_in=current_user.is_authenticated)
             print("Redirect URL:", redirect_url)
 
-            return redirect(url_for('draft_complete', draft_id=draft_id, draft_position=draft_position))
+            return redirect(url_for('draft_complete', draft_id=draft_id, draft_position=draft_position, logged_in=current_user.is_authenticated))
         picks = data.get_draft_picks(draft_id)
         picks = list(reversed(picks))
         top_players = data.top_players()
@@ -965,7 +1042,7 @@ def success(draft_id, draft_position):
         def3s = len([player for player in top_defs.values() if player.get('tier') == 3])
 
     except:
-        return render_template("not_found.html")
+        return render_template("not_found.html", logged_in=current_user.is_authenticated)
 
     return render_template("draft_board.html",
                            draft_id=draft_id,
@@ -1004,7 +1081,7 @@ def success(draft_id, draft_position):
                            k1s=k1s,
                            k2s=k2s,
                            k3s=k3s,
-                           my_team=my_team,
+                           my_team=my_team, logged_in=current_user.is_authenticated
                            )
 
 
@@ -1170,7 +1247,7 @@ def draft_complete(draft_id, draft_position):
         def3s = len([player for player in top_defs.values() if player.get('tier') == 3])
 
     except:
-        return render_template("not_found.html")
+        return render_template("not_found.html", logged_in=current_user.is_authenticated)
 
     return render_template("draft_complete.html",
                            draft_id=draft_id,
@@ -1209,7 +1286,7 @@ def draft_complete(draft_id, draft_position):
                            k1s=k1s,
                            k2s=k2s,
                            k3s=k3s,
-                           my_team=my_team,
+                           my_team=my_team, logged_in=current_user.is_authenticated
                            )
 
 

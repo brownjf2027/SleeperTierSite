@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-3 justify-content-center">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+<h1>All Posts</h1>
+  {% for post in posts %}
+      <p><a href="{{ url_for('show_post', post_id=post.id) }}">{{ post.id }}</a> - {{ post.email }}</p>
+  {% endfor %}
+</div>
+{% endblock %}

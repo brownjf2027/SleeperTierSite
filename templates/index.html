@@ -50,7 +50,7 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-            <li><a href="{{ url_for('login') }}" class="nav-link px-2 text-white">Draft Board</a></li>
+            <li><a href="{{ url_for('draft_login') }}" class="nav-link px-2 text-white">Draft Board</a></li>
             <li><a href="{{ url_for('contact') }}" class="nav-link px-2 text-white">Contact</a></li>
             <li><a href="{{ url_for('about') }}" class="nav-link px-2 text-white">About</a></li>
             <!--          <li><a href="#" class="nav-link px-2 text-white">About</a></li>-->
@@ -64,6 +64,26 @@
         <!--          <button type="button" class="btn btn-outline-light me-2">Login</button>-->
         <!--          <button type="button" class="btn btn-warning">Sign-up</button>-->
         <!--        </div>-->
+        <span class="navbar-nav me-2 mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% if not logged_in: %}
+                            <li><a class="dropdown-item" href="{{ url_for('login') }}">Sign In</a></li>
+                            {% endif %}
+                            {% if logged_in: %}
+                            <li><a class="dropdown-item" href="{{ url_for('all_posts') }}">Feedback</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="logout">Sign Out</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </span>
     </div>
 
 
@@ -86,7 +106,7 @@
                     download a CSV template to input Tier values to as many players as you'd like and upload back to the
                     site for live tracking. </p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}">Enter a Draft</a>
+                    <a class="btn btn-primary btn-lg" href="{{ url_for('draft_login') }}">Enter a Draft</a>
                     <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="downloadCSV()">Download
                         CSV Template
                     </button>

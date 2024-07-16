@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container mt-5 position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7 px-0">
+                <div class="post-heading">
+                    <h2>Feedback id: {{ post.id }} </h2>
+                    <h4 class="subheading">{{ post.name }}</h4>
+                    <h4 class="subheading">{{ post.email }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Post Content-->
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7 px-0">
+                <p>{{ post.feedback | safe }}</p>
+
+                <div class="text-center">
+                    {% if logged_in: %}
+                    <a href="{{ url_for('delete_post', post_id=post.id) }}" class="btn btn-secondary mx-auto">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+{% endblock %}
