@@ -12,8 +12,12 @@
                     <!--                <p class="mb-1"><strong>ID:</strong> {{ draft_id }}</p>-->
                     <p class="mb-1"><strong>Status:</strong> <a class="text-info">{{ draft_status }}</a></p>
                     <!--                <p class="mb-1"><strong>Last Pick:</strong> </p>-->
-                    <p class="mb-1 text-info">{{ draft_picks[0]['metadata']['first_name'] }} {{
-                        draft_picks[0]['metadata']['last_name'] }} ( #{{ draft_picks[0]['pick_no'] }} )</p>
+                    {% if draft_picks %}
+                        <p class="mb-1 text-info">{{ draft_picks[0]['metadata']['first_name'] }} {{
+                            draft_picks[0]['metadata']['last_name'] }} ( #{{ draft_picks[0]['pick_no'] }} )</p>
+                    {% else %}
+                        <p class="mb-1 text-info">No picks available yet.</p>
+                    {% endif %}
                     <p class="mb-1"><strong>Draft Position:</strong> {{ draft_position }} / {{
                         draft_info['settings']['teams'] }}</p>
                     <button class="btn btn-primary mb-2 px-2 py-0" type="button" data-bs-toggle="offcanvas"
