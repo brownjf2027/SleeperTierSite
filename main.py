@@ -1,3 +1,6 @@
+# Sleeper Tiers
+# BSD-3-Clause License
+# Copyright (c) [2024] [Jasen Brown]
 from _datetime import datetime
 from collections import OrderedDict
 from csv import DictWriter
@@ -101,7 +104,7 @@ def admin_required(f):
     return decorated_function
 
 
-#  TODO Would need to update authentication to handle both regular and admin users, currently only setup for admin
+#  TODO Would need to update authentication to handle both regular and admin users if we wanted to enable ability to save tier sheets, currently only setup for admin
 # @app.route('/register', methods=['GET', 'POST'])
 # def register():
 #     if request.method == 'POST':

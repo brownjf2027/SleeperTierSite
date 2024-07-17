@@ -1,4 +1,6 @@
-import copy
+# Sleeper Tiers
+# BSD-3-Clause License
+# Copyright (c) [2024] [Jasen Brown
 import requests
 import json
 from datetime import datetime
