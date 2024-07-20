@@ -261,13 +261,14 @@ def login():
         if user_check:
             if check_password_hash(user_check.password, user_password):
                 login_user(user_check)
-                return redirect(url_for("home", user_id=user_check.id, logged_in=current_user.is_authenticated))
+                return redirect(url_for("home", logged_in=current_user.is_authenticated))
             else:
                 flash("Incorrect password, please try again.")
                 return render_template("login.html", logged_in=current_user.is_authenticated)
         else:
             flash("That email does not exist, please try again.")
             return render_template("login.html", logged_in=current_user.is_authenticated)
+
     return render_template("login.html", logged_in=current_user.is_authenticated)
 
 

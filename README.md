@@ -1,4 +1,4 @@
-Site is now live at: https://sleepertiers.azurewebsites.net/
+Site is now live at: https://sleepertiers.com/
 
 This was a fun project that replaces some APIs I was doing in Excel with VBA to make my fantasy drafts in Sleeper.com more efficient and easy. 
 
