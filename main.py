@@ -268,7 +268,6 @@ def login():
         else:
             flash("That email does not exist, please try again.")
             return render_template("login.html", logged_in=current_user.is_authenticated)
-
     return render_template("login.html", logged_in=current_user.is_authenticated)
 
 
