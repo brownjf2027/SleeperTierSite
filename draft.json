@@ -1,7 +1,7 @@
 {
     "type": "snake",
-    "status": "complete",
-    "start_time": 1710279973013,
+    "status": "paused",
+    "start_time": 1721176188266,
     "sport": "nfl",
     "slot_to_roster_id": {
         "9": 9,
@@ -35,18 +35,19 @@
         "scoring_type": "std",
         "name": "",
         "is_autopaused": "false",
+        "elapsed_pick_timer": "4545",
         "description": ""
     },
     "league_id": null,
-    "last_picked": 1710279974177,
-    "last_message_time": 1710279974187,
-    "last_message_id": "1073395646641479680",
+    "last_picked": 1721541313450,
+    "last_message_time": 1721541318002,
+    "last_message_id": "1120629146050203648",
     "draft_order": {
-        "738962794141077504": 4
+        "738962794141077504": 5
     },
-    "draft_id": "1073181409734414336",
+    "draft_id": "1119097568354553856",
     "creators": [
         "738962794141077504"
     ],
-    "created": 1710228896128
+    "created": 1721176161418
 }

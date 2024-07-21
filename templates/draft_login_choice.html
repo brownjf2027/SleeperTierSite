@@ -1,0 +1,32 @@
+<!-- Sleeper Tiers -->
+<!-- BSD 3-Clause License -->
+<!-- Copyright (c) [2024] [Jasen Brown] -->
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+{% from 'bootstrap5/form.html' import render_form %}
+
+<section class="pb-3 text-center">
+    <div class="container mb-3 mt-3 pt-3">
+        <h1 class="text-info mb-3">Sleeper Fantasy League</h1>
+        <h3 class = "mb-3">How would you like to find your Sleeper draft?</h3>
+        <a class="btn btn-info btn-lg mx-3" href="{{ url_for('draft_login') }}">By Draft URL</a>
+        OR
+        <a class="btn btn-info btn-lg mx-3" href="{{ url_for('draft_login_by_id') }}">By Sleeper ID</a>
+        <p class="lead mt-3">Use Draft URL for Mock Drafts.</p>
+    </div>
+</section>
+<div class="b-example-divider"></div>
+<section class="pb-3 text-center">
+    <div class="container mb-3 mt-3 py-3">
+        <h1 class="text-info mb-3">Manual Mode</h1>
+        <h3 class="mb-3">Manually mark players as drafted when they occur.</h3>
+        <p class="lead mt-3">Great for leagues on platforms outside of Sleeper.</p>
+        <a class="btn btn-info btn-lg" href="{{ url_for('manual_login') }}">Manual Draft Tracker</a>
+    </div>
+</section>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="jfbrown" data-description="Support me on Buy me a coffee!"
+        data-color="#51b9e9" data-position="Right" data-message="If you'd like to support future development. Click here!"
+        data-x_margin="18" data-y_margin="18"></script>
+{% endblock %}

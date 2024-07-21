@@ -13,6 +13,7 @@
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Set the data-bs-theme attribute -->
     <script>
         document.documentElement.setAttribute('data-bs-theme', '{{ theme }}');
@@ -53,7 +54,7 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-            <li><a href="{{ url_for('draft_login') }}" class="nav-link px-2 text-white">Draft Board</a></li>
+            <li><a href="{{ url_for('draft_login_choice') }}" class="nav-link px-2 text-white">Draft Board</a></li>
             <li><a href="{{ url_for('contact') }}" class="nav-link px-2 text-white">Contact</a></li>
             <li><a href="{{ url_for('about') }}" class="nav-link px-2 text-white">About</a></li>
             <!--          <li><a href="#" class="nav-link px-2 text-white">About</a></li>-->
@@ -71,7 +72,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            Admin
+                            <i class="fa-solid fa-circle-user"></i>
                         </a>
                         <ul class="dropdown-menu">
                             {% if not logged_in: %}
@@ -109,7 +110,7 @@
                     download a CSV template to input Tier values to as many players as you'd like and upload back to the
                     site for live tracking. </p>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <a class="btn btn-primary btn-lg" href="{{ url_for('draft_login') }}">Enter a Draft</a>
+                    <a class="btn btn-primary btn-lg" href="{{ url_for('draft_login_choice') }}">Enter a Draft</a>
                     <button type="button" class="btn btn-outline-secondary btn-lg px-4" onclick="downloadCSV()">Download
                         CSV Template
                     </button>

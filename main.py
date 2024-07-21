@@ -8,7 +8,7 @@ from io import StringIO
 from os import environ
 
 import sqlalchemy.exc
-from flask import Flask, render_template, redirect, url_for, make_response, jsonify, flash, request
+from flask import Flask, render_template, redirect, url_for, make_response, jsonify, flash, request, session
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -175,6 +175,12 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Launch Draft Tracker')
 
 
+class SleeperIdForm(FlaskForm):
+    sleeper_id = StringField('Sleeper Username:', validators=[DataRequired()])
+    csv_doc = FileField('CSV File for Players with Tier Assignments:', validators=[DataRequired(), CSVFileValidator()])
+    submit = SubmitField('Find Drafts')
+
+
 class ManualLoginForm(FlaskForm):
     csv_doc = FileField('CSV File for Players with Tier Assignments:', validators=[DataRequired(), CSVFileValidator()])
     submit = SubmitField('Launch Draft Tracker')
@@ -309,6 +315,29 @@ def thanks():
 @app.route("/about", methods=["GET"])
 def about():
     return render_template('about.html', logged_in=current_user.is_authenticated)
+
+
+@app.route("/draft_login_choice", methods=["GET"])
+def draft_login_choice():
+    return render_template('draft_login_choice.html', logged_in=current_user.is_authenticated)
+
+
+@app.route("/choose_draft", methods=["GET"])
+def choose_draft():
+    drafts = session.get('drafts')
+    user = session.get('user_id')
+    # Preprocess drafts to add 'position' field
+    for draft in drafts:
+        if draft['draft_order']:
+            if user in draft['draft_order']:
+                draft['draft_position'] = draft['draft_order'][user]
+            else:
+                draft['draft_position'] = 0
+        else:
+            draft['draft_position'] = 0
+
+    session['drafts'] = drafts
+    return render_template('choose_draft.html', drafts=drafts, logged_in=current_user.is_authenticated)
 
 
 @app.route("/draft/manual", methods=['GET'])
@@ -822,6 +851,38 @@ def draft_login():
     return render_template("draft_login.html", form=form, logged_in=current_user.is_authenticated)
 
 
+@app.route("/draft_login_by_id", methods=["GET", "POST"])
+def draft_login_by_id():
+    form = SleeperIdForm()
+    if form.validate_on_submit():
+        yr = datetime.now().year
+        session['drafts'] = data.get_drafts(yr, str(form.sleeper_id.data))
+        session['user_id'] = data.get_user(str(form.sleeper_id.data))['user_id']
+        csv_file = form.csv_doc.data
+
+        try:
+            # Read CSV data into a DataFrame
+            csv_df = read_csv(csv_file)
+
+            # Convert DataFrame to JSON format
+            csv_df.set_index('player_id', inplace=True)
+            # csv_json = csv_df.to_json(orient='index', indent=4)
+
+            # Write JSON data to a file
+            with open("csv_upload.json", "w") as data_file:
+                # json.dump(csv_json, data_file, indent=4)
+                csv_df.to_json(data_file, orient='index', indent=4)
+
+            # Redirect to success page
+            return redirect(url_for('choose_draft', logged_in=current_user.is_authenticated))
+
+        except Exception as e:
+            # Handle any errors that occur during the process
+            print("An error occurred:", e)
+
+    return render_template("draft_login_by_id.html", form=form, logged_in=current_user.is_authenticated)
+
+
 @app.route("/manual_login", methods=["GET", "POST"])
 def manual_login():
     form = ManualLoginForm()
@@ -861,7 +922,10 @@ def check_for_updates(draft_id):
     draft_api_url = "https://api.sleeper.app/v1/draft/" + draft_id + "/picks"
     response = get(draft_api_url, params=parameters)
     response.raise_for_status()
-    new_state = response.json()[-1]['pick_no']
+    try:
+        new_state = response.json()[-1]['pick_no']
+    except IndexError:
+        new_state = 'no picks'
     print("New state:", new_state)  # Add print statement to debug
     print("Current state:", current_state)  # Add print statement to debug
 

@@ -100,7 +100,9 @@ def get_leagues(year, user_id):
 
 
 def get_drafts(year, user_id):
-    drafts_url = DRAFTS_BY_USER.replace("<user_id>", user_id)
+    user_data = get_user(user_id)
+    user = user_data["user_id"]
+    drafts_url = DRAFTS_BY_USER.replace("<user_id>", user)
     drafts_url = drafts_url.replace("<season>", str(year))
     parameters = {}
     response = requests.get(drafts_url, params=parameters)
@@ -150,7 +152,9 @@ def update_player_data_for_site():
 
 # try:
 #     user_data = get_user("jfbrown")
-#     drafts = get_drafts("2024", user_data["user_id"])
+#     yr = datetime.now().year
+#     drafts = get_drafts(yr, user_data["user_id"])
 #     print(drafts)
+#
 # except requests.RequestException:
 #     print("not found")
