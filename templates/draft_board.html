@@ -23,6 +23,7 @@
                     {% endif %}
                     <p class="mb-1"><strong>Draft Position:</strong> {{ draft_position }} / {{
                         draft_info['settings']['teams'] }}</p>
+                    <p>{{ pts_key }} / {{ adp_key }}</p>
                     <button class="btn btn-primary mb-2 px-2 py-0" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">See Picks
                     </button>
@@ -236,17 +237,47 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                        {% for key, values in top_qbs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
-                        {% endfor %}
+                            {% set ns = namespace(previousTier=1) %}
+                            {% if draft_picks %}
+                                {% set ns.pick_no = draft_picks[0]['pick_no'] + 1 %}
+                            {% else %}
+                                {% set ns.pick_no = 1 %}
+                            {% endif %}
+                            {% set ns.teams = draft_info['settings']['teams'] %}
+
+                            {% for key, values in top_qbs.items() %}
+                                {% set currentTier = values['tier'] %}
+                                {% set adp = values['stats'][adp_key]|int %}
+                                {% set adp_round = (adp/ns.teams)+1|int %}
+                                {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                                {% if currentTier == ns.previousTier %}
+                                    <tr>
+                                {% else %}
+                                    <tr class="tier-divider">
+                                {% endif %}
+
+                                    <td>{{ values['tier'] }}</td>
+                                    <td>{{ values['full_name'] }}</td>
+                                    <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                    {% if (adp_round - round) < 2 %}
+                                        {% if (adp_round - round) < 1 %}
+                                            <td style="color: red; text-align: center;">{{ adp }}</td>
+                                        {% else %}
+                                            <td style="color: yellow; text-align: center;">{{ adp }}</td>
+                                        {% endif %}
+                                    {% else %}
+                                        <td style="text-align: center;">{{ adp }}</td>
+                                    {% endif %}
+
+                                </tr>
+                                {% set ns.previousTier = currentTier %}
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -310,16 +341,39 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_rbs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% set adp = values['stats'][adp_key]|int %}
+                            {% set adp_round = (adp/ns.teams)+1|int %}
+                            {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                {% if (adp_round - round) < 2 %}
+                                    {% if (adp_round - round) < 1 %}
+                                        <td style="color: red; text-align: center;">{{ adp }}</td>
+                                    {% else %}
+                                        <td style="color: yellow; text-align: center">{{ adp }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td style="text-align: center;">{{ adp }}</td>
+                                {% endif %}
+
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -384,16 +438,39 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_wrs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
+                        {% set currentTier = values['tier'] %}
+                            {% set adp = values['stats'][adp_key]|int %}
+                            {% set adp_round = (adp/ns.teams)+1|int %}
+                            {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                {% if (adp_round - round) < 2 %}
+                                    {% if (adp_round - round) < 1 %}
+                                        <td style="color: red; text-align: center;">{{ adp }}</td>
+                                    {% else %}
+                                        <td style="color: yellow; text-align: center">{{ adp }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td style="text-align: center;">{{ adp }}</td>
+                                {% endif %}
+
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -458,16 +535,39 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_tes.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
+                        {% set currentTier = values['tier'] %}
+                            {% set adp = values['stats'][adp_key]|int %}
+                            {% set adp_round = (adp/ns.teams)+1|int %}
+                            {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                {% if (adp_round - round) < 2 %}
+                                    {% if (adp_round - round) < 1 %}
+                                        <td style="color: red; text-align: center;">{{ adp }}</td>
+                                    {% else %}
+                                        <td style="color: yellow; text-align: center">{{ adp }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td style="text-align: center;">{{ adp }}</td>
+                                {% endif %}
+
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -532,16 +632,39 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_defs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
+                        {% set currentTier = values['tier'] %}
+                            {% set adp = values['stats'][adp_key]|int %}
+                            {% set adp_round = (adp/ns.teams)+1|int %}
+                            {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
+                                <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                {% if (adp_round - round) < 2 %}
+                                    {% if (adp_round - round) < 1 %}
+                                        <td style="color: red; text-align: center;">{{ adp }}</td>
+                                    {% else %}
+                                        <td style="color: yellow; text-align: center">{{ adp }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td style="text-align: center;">{{ adp }}</td>
+                                {% endif %}
+
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -605,16 +728,39 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 4rem; text-align: center;">Proj</th>
+                            <th scope="col" style="width: 2rem; text-align: center;">ADP</th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_ks.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                        </tr>
+                        {% set currentTier = values['tier'] %}
+                            {% set adp = values['stats'][adp_key]|int %}
+                            {% set adp_round = (adp/ns.teams)+1|int %}
+                            {% set round = (ns.pick_no/ns.teams)+1|int %}
+
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td style="text-align: center;">{{ values['stats'][pts_key]|int }}</td>
+                                {% if (adp_round - round) < 2 %}
+                                    {% if (adp_round - round) < 1 %}
+                                        <td style="color: red; text-align: center;">{{ adp }}</td>
+                                    {% else %}
+                                        <td style="color: yellow; text-align: center">{{ adp }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td style="text-align: center;">{{ adp }}</td>
+                                {% endif %}
+
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>

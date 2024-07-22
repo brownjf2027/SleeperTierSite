@@ -204,8 +204,17 @@ overflow-y: auto;
 overflow-x: hidden;
 }
 
+.tier-divider{
+border-top: .05rem solid white;
+
+}
+
 .table-sm{
 color: #fff;
+}
+
+.table-sm thead th {
+    border-bottom: 4px solid #51b9e9; /* Set border style, width, and color */
 }
 
 .list-group-item-action:active {
@@ -228,7 +237,7 @@ color: #fff;
     left: 0;
     overflow-y: auto;
     padding-top: 30px;
-    margin-top: 30px;
+    margin-top: 40px;
     padding-bottom: 50px;
 }
 

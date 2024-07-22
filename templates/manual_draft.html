@@ -251,26 +251,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns = namespace(previousTier=1) %}
                         {% for key, values in top_qbs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -335,26 +345,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_rbs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -419,26 +439,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_wrs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -503,26 +533,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_tes.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -587,26 +627,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_defs.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['first_name'] }} {{ values['last_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -670,26 +720,36 @@
                         <tr>
                             <th scope="col" style="width: 2rem">Tier</th>
                             <th scope="col" style="width: 9rem">Name</th>
-                            <th scope="col" style="width: 4rem">Proj</th>
+                            <th scope="col" style="width: 3rem">Proj</th>
+                            <th scope="col" style="width: 1rem"></th>
+                            <th scope="col" style="width: 1rem"></th>
                         </tr>
                         </thead>
                         <tbody class="table-group-divider">
+                        {% set ns.previousTier=1 %}
                         {% for key, values in top_ks.items() %}
-                        <tr>
-                            <td>{{ values['tier'] }}</td>
-                            <td>{{ values['full_name'] }}</td>
-                            <td>{{ values['stats']['pts_half_ppr'] }}</td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
-                                    <i class="fa-solid fa-plus"></i>
-                                </a>
-                            </td>
-                        </tr>
+                            {% set currentTier = values['tier'] %}
+                            {% if currentTier == ns.previousTier %}
+                                <tr>
+                            {% else %}
+                                <tr class="tier-divider">
+                            {% endif %}
+
+                                <td>{{ values['tier'] }}</td>
+                                <td>{{ values['full_name'] }}</td>
+                                <td>{{ values['stats']['pts_half_ppr']|int }}</td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='picked', player=key) }}">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('manual_picked', function='chosen', player=key) }}">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% set ns.previousTier = currentTier %}
                         {% endfor %}
                         </tbody>
                     </table>

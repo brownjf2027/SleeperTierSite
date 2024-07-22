@@ -988,6 +988,31 @@ def success(draft_id, draft_position):
     try:
         draft_info = data.get_draft(draft_id)
         draft_order = draft_info.get('draft_order')
+        draft_scoring_type = draft_info['metadata']['scoring_type']
+
+        adp_key = "adp_half_ppr"
+        pts_key = "pts_half_ppr"
+        if draft_scoring_type == "ppr":
+            adp_key = "adp_ppr"
+            pts_key = "pts_ppr"
+        elif draft_scoring_type == "std":
+            adp_key = "adp_std"
+            pts_key = "pts_std"
+        elif draft_scoring_type == "idp":
+            adp_key = "adp_idp"
+        elif draft_scoring_type == "2qb":
+            adp_key = "adp_2qb"
+        elif draft_scoring_type == "dynasty_half_ppr":
+            adp_key = "adp_dynasty_half_ppr"
+        elif draft_scoring_type == "dynasty_std":
+            adp_key = "adp_dynasty_std"
+            pts_key = "pts_std"
+        elif draft_scoring_type == "dynasty_ppr":
+            adp_key = "adp_dynasty_ppr"
+            pts_key = "pts_ppr"
+        elif draft_scoring_type == "dynasty_2qb":
+            adp_key = "adp_dynasty_2qb"
+
         if draft_order is not None:
             for key, value in draft_order.items():
                 if value == int(draft_position):
@@ -1149,7 +1174,10 @@ def success(draft_id, draft_position):
                            k1s=k1s,
                            k2s=k2s,
                            k3s=k3s,
-                           my_team=my_team, logged_in=current_user.is_authenticated
+                           my_team=my_team,
+                           adp_key=adp_key,
+                           pts_key=pts_key,
+                           logged_in=current_user.is_authenticated
                            )
 
 
@@ -1199,6 +1227,31 @@ def draft_complete(draft_id, draft_position):
     try:
         draft_info = data.get_draft(draft_id)
         draft_order = draft_info['draft_order']
+        draft_scoring_type = draft_info['metadata']['scoring_type']
+
+        adp_key = "adp_half_ppr"
+        pts_key = "pts_half_ppr"
+        if draft_scoring_type == "ppr":
+            adp_key = "adp_ppr"
+            pts_key = "pts_ppr"
+        elif draft_scoring_type == "std":
+            adp_key = "adp_std"
+            pts_key = "pts_std"
+        elif draft_scoring_type == "idp":
+            adp_key = "adp_idp"
+        elif draft_scoring_type == "2qb":
+            adp_key = "adp_2qb"
+        elif draft_scoring_type == "dynasty_half_ppr":
+            adp_key = "adp_dynasty_half_ppr"
+        elif draft_scoring_type == "dynasty_std":
+            adp_key = "adp_dynasty_std"
+            pts_key = "pts_std"
+        elif draft_scoring_type == "dynasty_ppr":
+            adp_key = "adp_dynasty_ppr"
+            pts_key = "pts_ppr"
+        elif draft_scoring_type == "dynasty_2qb":
+            adp_key = "adp_dynasty_2qb"
+
         for key, value in draft_order.items():
             if value == int(draft_position):
                 my_team = str(key)
@@ -1354,7 +1407,10 @@ def draft_complete(draft_id, draft_position):
                            k1s=k1s,
                            k2s=k2s,
                            k3s=k3s,
-                           my_team=my_team, logged_in=current_user.is_authenticated
+                           my_team=my_team,
+                           adp_key=adp_key,
+                           pts_key=pts_key,
+                           logged_in=current_user.is_authenticated
                            )
 
 
