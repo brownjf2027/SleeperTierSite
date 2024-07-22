@@ -6,7 +6,18 @@ It was a way for me to practice the following:
 - Flask for Web Development in Python along with HTML
 - Boostrap and additional CSS for custom styling
 
-![example](https://github.com/brownjf2027/SleeperTierSite/assets/61604340/b4360695-1285-4c9d-966c-96ed521f9c73)
+## Updates for July 2024:
+- Abiilty to find drafts by Sleeper username
+- For live drafts on Sleeper projected points now matches scoring method of the draft (ppr, half-ppr, std, etc.)
+- For live drafts on Sleeper, ADP is now included with color-coding based on when the player will likely fall: red for within next round, yellow for within 2 rounds.
+- Manual draft tracker added.
+- Some other CSS updates for display/readability.
+
+# Behind-the-scenes:
+- Admin login, which could be repurposed for user logins if people wanted to be able to save their own tier sheets to the site.
+- Admin: feedback management and viewing within the site.
+
+![example](https://github.com/brownjf2027/SleeperTierSite/blob/master/static/images/example.png)
 
 ## License
 This project is licensed under the BSD-3-Clause license. See the [LICENSE](LICENSE) file for details.
