@@ -328,9 +328,11 @@ def choose_draft():
     user = session.get('user_id')
     # Preprocess drafts to add 'position' field
     for draft in drafts:
-        if draft['draft_order']:
-            if user in draft['draft_order']:
-                draft['draft_position'] = draft['draft_order'][user]
+        draft_details = data.get_draft(draft['draft_id'])
+
+        if draft_details['draft_order']:
+            if user in draft_details['draft_order']:
+                draft['draft_position'] = draft_details['draft_order'][user]
             else:
                 draft['draft_position'] = 0
         else:

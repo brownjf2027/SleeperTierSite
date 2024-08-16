@@ -1,53 +1,74 @@
 {
-    "type": "snake",
-    "status": "paused",
-    "start_time": 1721176188266,
-    "sport": "nfl",
-    "slot_to_roster_id": {
-        "9": 9,
-        "8": 8,
-        "7": 7,
-        "6": 6,
-        "5": 5,
-        "4": 4,
-        "3": 3,
-        "2": 2,
-        "10": 10,
-        "1": 1
-    },
-    "settings": {
-        "teams": 10,
-        "slots_wr": 2,
-        "slots_te": 1,
-        "slots_rb": 2,
-        "slots_qb": 1,
-        "slots_k": 1,
-        "slots_flex": 2,
-        "slots_def": 1,
-        "rounds": 15,
-        "pick_timer": 120,
-        "cpu_autopick": 1,
-        "autostart": 0
-    },
-    "season_type": "regular",
-    "season": "2024",
-    "metadata": {
-        "scoring_type": "std",
-        "name": "",
-        "is_autopaused": "false",
-        "elapsed_pick_timer": "4545",
-        "description": ""
-    },
-    "league_id": null,
-    "last_picked": 1721541313450,
-    "last_message_time": 1721541318002,
-    "last_message_id": "1120629146050203648",
-    "draft_order": {
-        "738962794141077504": 5
-    },
-    "draft_id": "1119097568354553856",
+    "created": 1721400119404,
     "creators": [
-        "738962794141077504"
+        "201781684272627712"
     ],
-    "created": 1721176161418
+    "draft_id": "1120036916201746433",
+    "draft_order": {
+        "201781684272627712": 9,
+        "332716451100123136": 5,
+        "339237729185325056": 8,
+        "602328807138992128": 6,
+        "602598625503154176": 2,
+        "738962794141077504": 10,
+        "859546178176532480": 4,
+        "861100239111696384": 1,
+        "863894474391154688": 3,
+        "863908669178408960": 7
+    },
+    "last_message_id": "1120036916201746433",
+    "last_message_time": 1721400119404,
+    "last_picked": null,
+    "league_id": "1120036916201746432",
+    "metadata": {
+        "description": "",
+        "name": "I BAKED YOU A CAAAKE!!!",
+        "scoring_type": "2qb"
+    },
+    "season": "2024",
+    "season_type": "regular",
+    "settings": {
+        "alpha_sort": 0,
+        "autopause_enabled": 0,
+        "autopause_end_time": 900,
+        "autopause_start_time": 180,
+        "autostart": 0,
+        "cpu_autopick": 1,
+        "enforce_position_limits": 1,
+        "nomination_timer": 60,
+        "pick_timer": 120,
+        "player_type": 0,
+        "position_limit_def": 4,
+        "position_limit_k": 4,
+        "position_limit_qb": 4,
+        "position_limit_te": 4,
+        "reversal_round": 0,
+        "rounds": 18,
+        "slots_bn": 7,
+        "slots_def": 1,
+        "slots_flex": 1,
+        "slots_k": 1,
+        "slots_qb": 1,
+        "slots_rb": 2,
+        "slots_super_flex": 1,
+        "slots_te": 1,
+        "slots_wr": 3,
+        "teams": 10
+    },
+    "slot_to_roster_id": {
+        "1": 7,
+        "10": 4,
+        "2": 3,
+        "3": 9,
+        "4": 6,
+        "5": 5,
+        "6": 8,
+        "7": 10,
+        "8": 2,
+        "9": 1
+    },
+    "sport": "nfl",
+    "start_time": 1724630416000,
+    "status": "pre_draft",
+    "type": "snake"
 }

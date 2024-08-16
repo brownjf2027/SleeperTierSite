@@ -13,6 +13,7 @@
                 <a href="{{ url_for('success', draft_id=draft['draft_id'], draft_position=draft['draft_position']) }}">
                     Draft {{ draft['draft_id'] }} - {{ draft['metadata']['name'] }}
                 </a>
+                <br>
             {% endfor %}
         {% else %}
             <p>No drafts available.</p>
