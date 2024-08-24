@@ -10,7 +10,7 @@ DRAFT_URL = "https://api.sleeper.app/v1/draft/"
 USER_URL = "https://api.sleeper.app/v1/user/"
 LEAGUES_BY_USER = "https://api.sleeper.app/v1/user/<user_id>/leagues/nfl/<season>"
 DRAFTS_BY_USER = "https://api.sleeper.app/v1/user/<user_id>/drafts/nfl/<season>"
-TOP_X_PLAYERS = 500
+TOP_X_PLAYERS = 750
 
 
 def get_projections(player_id, season):
