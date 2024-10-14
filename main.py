@@ -317,6 +317,33 @@ def about():
     return render_template('about.html', logged_in=current_user.is_authenticated)
 
 
+@app.route("/roster_analysis/<league_id>/<roster_id>", methods=["GET"])
+def roster_analysis(league_id, roster_id):
+    rosters = data.get_rosters(league_id)
+    roster = next((roster for roster in rosters if roster['owner_id'] == roster_id), None)
+
+    player_info = data.get_players()
+
+    roster_detail = []
+    for player in roster['players']:
+        variance_data = data.calculate_variance(player)
+
+        if player_info[player]['position'] != "DEF":
+            roster_detail.append(
+                dict(id=player, variance=variance_data, name=player_info[player]['first_name'] + " " + player_info[player]['last_name'], pos=player_info[player]['position'], status=player_info[player]['status'])
+            )
+            roster_detail.sort(key=lambda x: x['pos'])
+        else:
+            roster_detail.append(
+                dict(id=player, variance=variance_data,
+                     name=player_info[player]['first_name'] + " " + player_info[player]['last_name'],
+                     pos=player_info[player]['position'], status="")
+            )
+            roster_detail.sort(key=lambda x: x['pos'])
+
+    return render_template('roster_analysis.html', player_data=roster_detail, logged_in=current_user.is_authenticated)
+
+
 @app.route("/draft_login_choice", methods=["GET"])
 def draft_login_choice():
     return render_template('draft_login_choice.html', logged_in=current_user.is_authenticated)

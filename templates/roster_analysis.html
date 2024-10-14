@@ -1,0 +1,84 @@
+<!-- Sleeper Tiers -->
+<!-- BSD 3-Clause License -->
+<!-- Copyright (c) [2024] [Jasen Brown] -->
+{% extends "base.html" %}
+{% block title %}Sleeper Tiers{% endblock %}
+{% block content %}
+<section class="pt-5">
+    <div class="container mb-3">
+        <h1 class="header mb-3"> Your Roster </h1>
+        <div class="table-primary">
+            <table class="table-sm">
+                <thead>
+                    <tr>
+                        <th>Player Name</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                        <th></th>
+                        {% for week in player_data[0]['variance']['total_projection']['weeks_detail'] %}
+                            <th>Week {{ week }}</th>
+                        {% endfor %}
+                        <th>Avg</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                {% for player in player_data %}
+                    <tr class="tier-divider">
+                        <td>{{ player['name'] }}</td>
+                        <td>{{ player['pos'] }}</td>
+                        <td>{{ player['status'] }}</td>
+                        <td><i>Projected</i></td>
+                        {% for week, details in player.variance.total_projection.weeks_detail.items() %}
+                            <td>{{ details.pts_half_ppr | round(2) }}</td>
+                        {% endfor %}
+                        {% if player.variance.total_projection.non_zero > 0 %}
+                            <td>{{ (player.variance.total_projection.total_pts_half_ppr / player.variance.total_projection.non_zero) | round(2) }}</td>
+                        {% elif player.pos == "DEF" %}
+                            <td>{{ (player.variance.total_projection.total_pts_half_ppr / (player.variance.total_projection.weeks_detail.items() | length)) | round(2) }}</td>
+                        {% endif %}
+                        <td>{{ player.variance.total_projection.total_pts_half_ppr | round(2)}}</td>
+    <!--                    <td>{{ '%d' % player['variance']['total_actual_scores']['total_pts_half_ppr'] }}</td>-->
+    <!--                    <td>{{ '%d' % (player['variance']['total_actual_scores']['total_pts_half_ppr'] - player['variance']['total_projection']['total_pts_half_ppr']) }}</td>-->
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><i>Actual</i></td>
+                        {% for week, details in player.variance.total_actual_scores.weeks_detail.items() %}
+                            <td>{{ details.pts_half_ppr | round(2) }}</td>
+                        {% endfor %}
+                        {% if player.variance.total_actual_scores.non_zero > 0 %}
+                            <td>{{ (player.variance.total_actual_scores.total_pts_half_ppr / player.variance.total_actual_scores.non_zero) | round(2) }}</td>
+                        {% elif player.pos =="DEF" %}
+                            <td>{{ (player.variance.total_actual_scores.total_pts_half_ppr / (player.variance.total_actual_scores.weeks_detail.items() | length)) | round(2) }}</td>
+                        {% endif %}
+                        <td>{{ player.variance.total_actual_scores.total_pts_half_ppr | round(2)}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><i>Variance</i></td>
+                        {% for week, details in player.variance.variance.items() %}
+                            <td>{{ details.pts_half_ppr_variance | round(2) }}</td>
+                        {% endfor %}
+                        {% if player.variance.total_actual_scores.non_zero > 0 %}
+                            <td>{{ (( player.variance.total_actual_scores.total_pts_half_ppr - player.variance.total_projection.total_pts_half_ppr )/ player.variance.total_actual_scores.non_zero) | round(2) }}</td>
+                        {% elif player.pos =="DEF" %}
+                            <td>{{ (( player.variance.total_actual_scores.total_pts_half_ppr - player.variance.total_projection.total_pts_half_ppr )/ player.variance.total_actual_scores.weeks_detail.items() | length) | round(2) }}</td>
+                        {% endif %}
+                        <td>{{ ( player.variance.total_actual_scores.total_pts_half_ppr - player.variance.total_projection.total_pts_half_ppr ) | round(2)}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="jfbrown" data-description="Support me on Buy me a coffee!"
+        data-color="#51b9e9" data-position="Right" data-message="If you'd like to support future development. Click here!"
+        data-x_margin="18" data-y_margin="18"></script>
+{% endblock %}
